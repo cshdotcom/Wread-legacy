@@ -1,5 +1,5 @@
 # WRead Dockerfile - Single container for self-hosted deployment
-FROM node:24-slim AS dependencies
+FROM node:22-slim AS dependencies
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm@11.1.1
@@ -14,7 +14,7 @@ RUN test -f packages/foliate-js/vendor/pdfjs/annotation_layer_builder.css \
     || { printf '\nERROR: Required git submodules are not initialized.\nRun: git submodule update --init packages/foliate-js packages/simplecc-wasm\n\n'; exit 1; }
 RUN pnpm --filter @readest/readest-app setup-vendors
 
-FROM node:24-slim AS development-stage
+FROM node:22-slim AS development-stage
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm@11.1.1
@@ -27,7 +27,7 @@ RUN mkdir -p /app/data/storage
 EXPOSE 3000
 ENTRYPOINT ["pnpm", "dev-web", "-H", "0.0.0.0"]
 
-FROM node:24-slim AS build
+FROM node:22-slim AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm@11.1.1
@@ -41,7 +41,7 @@ COPY . .
 WORKDIR /app/apps/wread-app
 RUN pnpm build-web
 
-FROM node:24-slim AS production-stage
+FROM node:22-slim AS production-stage
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm@11.1.1
