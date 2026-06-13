@@ -1,9 +1,8 @@
 # WRead Dockerfile - Single container for self-hosted deployment
-FROM docker.io/library/node:24-slim@sha256:24dc26ef1e3c3690f27ebc4136c9c186c3133b25563ae4d7f0692e4d1fe5db0e AS dependencies
+FROM node:24-slim AS dependencies
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-RUN corepack prepare pnpm@11.1.1 --activate
+RUN npm install -g pnpm@11.1.1
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/wread-app/package.json ./apps/wread-app/
@@ -15,11 +14,10 @@ RUN test -f packages/foliate-js/vendor/pdfjs/annotation_layer_builder.css \
     || { printf '\nERROR: Required git submodules are not initialized.\nRun: git submodule update --init packages/foliate-js packages/simplecc-wasm\n\n'; exit 1; }
 RUN pnpm --filter @readest/readest-app setup-vendors
 
-FROM docker.io/library/node:24-slim@sha256:24dc26ef1e3c3690f27ebc4136c9c186c3133b25563ae4d7f0692e4d1fe5db0e AS development-stage
+FROM node:24-slim AS development-stage
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-RUN corepack prepare pnpm@11.1.1 --activate
+RUN npm install -g pnpm@11.1.1
 WORKDIR /app
 COPY --from=dependencies /app /app
 COPY . .
@@ -29,11 +27,10 @@ RUN mkdir -p /app/data/storage
 EXPOSE 3000
 ENTRYPOINT ["pnpm", "dev-web", "-H", "0.0.0.0"]
 
-FROM docker.io/library/node:24-slim@sha256:24dc26ef1e3c3690f27ebc4136c9c186c3133b25563ae4d7f0692e4d1fe5db0e AS build
+FROM node:24-slim AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-RUN corepack prepare pnpm@11.1.1 --activate
+RUN npm install -g pnpm@11.1.1
 WORKDIR /app
 ARG NEXT_PUBLIC_APP_PLATFORM=web
 COPY --from=dependencies /app/node_modules /app/node_modules
@@ -44,11 +41,10 @@ COPY . .
 WORKDIR /app/apps/wread-app
 RUN pnpm build-web
 
-FROM docker.io/library/node:24-slim@sha256:24dc26ef1e3c3690f27ebc4136c9c186c3133b25563ae4d7f0692e4d1fe5db0e AS production-stage
+FROM node:24-slim AS production-stage
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-RUN corepack prepare pnpm@11.1.1 --activate
+RUN npm install -g pnpm@11.1.1
 WORKDIR /app
 COPY --from=build /app /app
 WORKDIR /app/apps/wread-app
