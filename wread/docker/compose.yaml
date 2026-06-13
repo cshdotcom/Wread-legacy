@@ -1,0 +1,35 @@
+name: wread
+
+services:
+  wread:
+    container_name: wread
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${WREAD_PORT:-3000}:3000"
+    volumes:
+      - wread-db:/app/data
+      - wread-storage:/app/data/storage
+    environment:
+      - WREAD_DB_PATH=/app/data/wread.db
+      - WREAD_STORAGE_PATH=/app/data/storage
+      - WREAD_JWT_SECRET=${WREAD_JWT_SECRET}
+      - WREAD_JWT_EXPIRY=${WREAD_JWT_EXPIRY:-7d}
+      - WREAD_ADMIN_EMAIL=${WREAD_ADMIN_EMAIL:-admin@wread.local}
+      - WREAD_ADMIN_PASSWORD=${WREAD_ADMIN_PASSWORD:-admin}
+      - NEXT_PUBLIC_APP_PLATFORM=web
+      - STORAGE_FIXED_QUOTA=${STORAGE_FIXED_QUOTA:-10737418240}
+      - TRANSLATION_FIXED_QUOTA=${TRANSLATION_FIXED_QUOTA:-500000}
+      - LIBRETRANSLATE_URL=${LIBRETRANSLATE_URL:-}
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000').then(r => process.exit(r.ok ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  wread-db:
+  wread-storage:
