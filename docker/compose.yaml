@@ -1,0 +1,47 @@
+name: wread
+
+services:
+  wread:
+    container_name: wread
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${WREAD_PORT:-2586}:3000"
+    volumes:
+      - wread-db:/app/data
+      - wread-storage:/app/data/storage
+    environment:
+      - WREAD_DB_PATH=/app/data/wread.db
+      - WREAD_STORAGE_PATH=/app/data/storage
+      - WREAD_JWT_SECRET=${WREAD_JWT_SECRET}
+      - WREAD_JWT_EXPIRY=${WREAD_JWT_EXPIRY:-7d}
+      - WREAD_ADMIN_EMAIL=${WREAD_ADMIN_EMAIL:-c135860@outlook.com}
+      - WREAD_ADMIN_PASSWORD=${WREAD_ADMIN_PASSWORD:-15068253855z}
+      - WREAD_ALLOW_SELF_REGISTER=${WREAD_ALLOW_SELF_REGISTER:-false}
+      - NEXT_PUBLIC_APP_PLATFORM=web
+      - STORAGE_FIXED_QUOTA=${STORAGE_FIXED_QUOTA:-10737418240}
+      - TRANSLATION_FIXED_QUOTA=${TRANSLATION_FIXED_QUOTA:-500000}
+      - LIBRETRANSLATE_URL=${LIBRETRANSLATE_URL:-https://ta.910500.xyz}
+      - WREAD_SMTP_HOST=${WREAD_SMTP_HOST:-}
+      - WREAD_SMTP_PORT=${WREAD_SMTP_PORT:-587}
+      - WREAD_SMTP_SECURE=${WREAD_SMTP_SECURE:-false}
+      - WREAD_SMTP_USER=${WREAD_SMTP_USER:-}
+      - WREAD_SMTP_PASS=${WREAD_SMTP_PASS:-}
+      - WREAD_SMTP_FROM_ADDRESS=${WREAD_SMTP_FROM_ADDRESS:-noreply@wread.local}
+      - WREAD_IMAP_HOST=${WREAD_IMAP_HOST:-}
+      - WREAD_IMAP_PORT=${WREAD_IMAP_PORT:-993}
+      - WREAD_IMAP_SECURE=${WREAD_IMAP_SECURE:-true}
+      - WREAD_IMAP_USER=${WREAD_IMAP_USER:-}
+      - WREAD_IMAP_PASS=${WREAD_IMAP_PASS:-}
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000').then(r => process.exit(r.ok ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  wread-db:
+  wread-storage:
