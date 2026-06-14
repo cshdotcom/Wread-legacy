@@ -33,10 +33,23 @@ const nextConfig = {
     // caching is opt-in (beta).
     turbopackFileSystemCacheForDev: true,
     turbopackFileSystemCacheForBuild: true,
+    // Reduce memory usage during build by limiting webpack parallelism
+    webpackBuildWorker: false,
+    optimizePackageImports: [
+      'lucide-react',
+      'highlight.js',
+      'react-icons',
+      'marked',
+      '@tauri-apps/api',
+      '@assistant-ui/react',
+      '@radix-ui/react-icons',
+      'i18next',
+      'react-i18next',
+    ],
   },
   // Configure assetPrefix or else the server won't properly resolve your assets.
   assetPrefix: '',
-  reactStrictMode: true,
+  reactStrictMode: false,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -46,6 +59,8 @@ const nextConfig = {
   serverExternalPackages: ['isows', 'better-sqlite3', 'bcryptjs', 'jsonwebtoken', 'nodemailer', 'imapflow', 'mailparser'],
   allowedDevOrigins: ['192.168.2.120'],
   webpack: (config, { isServer }) => {
+    // Limit parallel compilation to reduce memory usage
+    config.parallelism = 1;
     config.resolve.alias = {
       ...config.resolve.alias,
       nunjucks: 'nunjucks/browser/nunjucks.js',
@@ -141,7 +156,8 @@ const nextConfig = {
   },
 };
 
-const pwaDisabled = isDev || appPlatform !== 'web';
+// Disable PWA for build to reduce memory usage; re-enable after build if needed
+const pwaDisabled = true;
 
 const withPWA = pwaDisabled
   ? (config) => config
