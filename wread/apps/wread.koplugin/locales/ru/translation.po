@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: Readest contributors\n"
+"Last-Translator: WRead contributors\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "Readest"
-msgstr "Readest"
+msgid "WRead"
+msgstr "WRead"
 
-msgid "Keeps your KOReader and Readest devices in sync."
-msgstr "Поддерживает синхронизацию устройств KOReader и Readest."
+msgid "Keeps your KOReader and WRead devices in sync."
+msgstr "Поддерживает синхронизацию устройств KOReader и WRead."
 
 msgid "Library view"
 msgstr "Вид библиотеки"
@@ -77,14 +77,14 @@ msgstr "Папка загрузки…"
 msgid "Pick a folder for downloaded books"
 msgstr "Выберите папку для загруженных книг"
 
-msgid "Sign in to Readest to open the Library"
-msgstr "Войдите в Readest, чтобы открыть библиотеку"
+msgid "Sign in to WRead to open the Library"
+msgstr "Войдите в WRead, чтобы открыть библиотеку"
 
 msgid "Library"
 msgstr "Библиотека"
 
-msgid "Readest Library"
-msgstr "Библиотека Readest"
+msgid "WRead Library"
+msgstr "Библиотека WRead"
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -107,8 +107,8 @@ msgstr "Для полного отображения библиотеки тре
 msgid "File moved or deleted. Rescan library?"
 msgstr "Файл перемещён или удалён. Пересканировать библиотеку?"
 
-msgid "Download this book from Readest?"
-msgstr "Загрузить эту книгу из Readest?"
+msgid "Download this book from WRead?"
+msgstr "Загрузить эту книгу из WRead?"
 
 msgid "Download"
 msgstr "Загрузить"
@@ -125,8 +125,8 @@ msgstr "Облачная копия недоступна."
 msgid "Download failed."
 msgstr "Не удалось загрузить."
 
-msgid "No cover available on Readest."
-msgstr "Обложка недоступна в Readest."
+msgid "No cover available on WRead."
+msgstr "Обложка недоступна в WRead."
 
 msgid "Cover download failed."
 msgstr "Не удалось загрузить обложку."
@@ -182,14 +182,14 @@ msgstr "Загрузить обложку"
 msgid "Download All"
 msgstr "Загрузить все"
 
-msgid "Open Readest Library"
-msgstr "Открыть библиотеку Readest"
+msgid "Open WRead Library"
+msgstr "Открыть библиотеку WRead"
 
-msgid "Push Readest book library"
-msgstr "Отправить библиотеку Readest"
+msgid "Push WRead book library"
+msgstr "Отправить библиотеку WRead"
 
-msgid "Pull Readest book library"
-msgstr "Получить библиотеку Readest"
+msgid "Pull WRead book library"
+msgstr "Получить библиотеку WRead"
 
 msgid "Set auto progress sync"
 msgstr "Настроить автосинхронизацию прогресса"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "выкл"
 
 msgid "Toggle auto readest sync"
-msgstr "Переключить автосинхронизацию Readest"
+msgstr "Переключить автосинхронизацию WRead"
 
 msgid "Push readest progress from this device"
-msgstr "Отправить прогресс Readest с этого устройства"
+msgstr "Отправить прогресс WRead с этого устройства"
 
 msgid "Pull readest progress from other devices"
-msgstr "Получить прогресс Readest с других устройств"
+msgstr "Получить прогресс WRead с других устройств"
 
 msgid "Push readest annotations from this device"
-msgstr "Отправить заметки Readest с этого устройства"
+msgstr "Отправить заметки WRead с этого устройства"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Получить заметки Readest с других устройств"
+msgstr "Получить заметки WRead с других устройств"
 
-msgid "Add to Readest"
-msgstr "Добавить в Readest"
+msgid "Add to WRead"
+msgstr "Добавить в WRead"
 
-msgid "Sign in to Readest first."
-msgstr "Сначала войдите в Readest."
+msgid "Sign in to WRead first."
+msgstr "Сначала войдите в WRead."
 
 msgid "File not found."
 msgstr "Файл не найден."
@@ -233,14 +233,14 @@ msgstr "Вычисление хеша книги…"
 msgid "Could not read file."
 msgstr "Не удалось прочитать файл."
 
-msgid "Already in your Readest library:"
-msgstr "Уже в вашей библиотеке Readest:"
+msgid "Already in your WRead library:"
+msgstr "Уже в вашей библиотеке WRead:"
 
-msgid "Added to Readest:"
-msgstr "Добавлено в Readest:"
+msgid "Added to WRead:"
+msgstr "Добавлено в WRead:"
 
-msgid "Log in Readest Account"
-msgstr "Войти в аккаунт Readest"
+msgid "Log in WRead Account"
+msgstr "Войти в аккаунт WRead"
 
 msgid "Log out as %1"
 msgstr "Выйти из %1"
@@ -248,8 +248,8 @@ msgstr "Выйти из %1"
 msgid "Auto sync"
 msgstr "Автосинхронизация"
 
-msgid "Readest library"
-msgstr "Библиотека Readest"
+msgid "WRead library"
+msgstr "Библиотека WRead"
 
 msgid "Push books now"
 msgstr "Отправить книги сейчас"
@@ -284,8 +284,8 @@ msgstr "Проверить обновления"
 msgid "Please login first"
 msgstr "Сначала войдите в систему"
 
-msgid "Please configure Readest settings first"
-msgstr "Сначала настройте параметры Readest"
+msgid "Please configure WRead settings first"
+msgstr "Сначала настройте параметры WRead"
 
 msgid "No book is open"
 msgstr "Нет открытой книги"
@@ -341,8 +341,8 @@ msgstr "Загрузка обновления…"
 msgid "Failed to download update. Please try again later."
 msgstr "Не удалось загрузить обновление. Повторите попытку позже."
 
-msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Плагин Readest обновлён до v%1.\n\nПерезапустите KOReader, чтобы применить обновление."
+msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Плагин WRead обновлён до v%1.\n\nПерезапустите KOReader, чтобы применить обновление."
 
 msgid "Restart now"
 msgstr "Перезапустить сейчас"
@@ -401,14 +401,14 @@ msgstr "Сначала настройте URL Supabase и ключ API"
 msgid "Logging in..."
 msgstr "Вход…"
 
-msgid "Successfully logged in to Readest"
-msgstr "Вы вошли в Readest"
+msgid "Successfully logged in to WRead"
+msgstr "Вы вошли в WRead"
 
 msgid "Login failed: %1"
 msgstr "Не удалось войти: %1"
 
-msgid "Logged out from Readest"
-msgstr "Выход из Readest выполнен"
+msgid "Logged out from WRead"
+msgstr "Выход из WRead выполнен"
 
 msgid "Cannot identify the current book"
 msgstr "Не удалось определить текущую книгу"

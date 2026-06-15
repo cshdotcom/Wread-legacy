@@ -1,14 +1,14 @@
 {
   "app_name": {
-    "message": "Skicka till Readest",
+    "message": "Skicka till WRead",
     "description": "Extension name shown in the browser toolbar and the Chrome Web Store listing."
   },
   "app_description": {
-    "message": "Spara webbsidor i ditt Readest-bibliotek",
+    "message": "Spara webbsidor i ditt WRead-bibliotek",
     "description": "Short description shown in the Chrome Web Store listing."
   },
   "action_title": {
-    "message": "Skicka till Readest",
+    "message": "Skicka till WRead",
     "description": "Tooltip on the toolbar action button."
   }
 }
