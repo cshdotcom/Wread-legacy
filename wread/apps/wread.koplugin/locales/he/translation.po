@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Hebrew\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "שומר על סנכרון בין מכשירי KOReader ו-WRead שלך."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "שומר על סנכרון בין מכשירי KOReader ו-Readest שלך."
 
 msgid "Library view"
 msgstr "תצוגת ספרייה"
@@ -77,14 +77,14 @@ msgstr "תיקיית הורדה…"
 msgid "Pick a folder for downloaded books"
 msgstr "בחר תיקייה לספרים שהורדו"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "התחבר ל-WRead כדי לפתוח את הספרייה"
+msgid "Sign in to Readest to open the Library"
+msgstr "התחבר ל-Readest כדי לפתוח את הספרייה"
 
 msgid "Library"
 msgstr "ספרייה"
 
-msgid "WRead Library"
-msgstr "ספריית WRead"
+msgid "Readest Library"
+msgstr "ספריית Readest"
 
 msgid "Cancel"
 msgstr "ביטול"
@@ -107,8 +107,8 @@ msgstr "ההרחבה Cover Browser נדרשת להצגת ספרייה מלאה. 
 msgid "File moved or deleted. Rescan library?"
 msgstr "הקובץ הוזז או נמחק. לסרוק את הספרייה מחדש?"
 
-msgid "Download this book from WRead?"
-msgstr "להוריד את הספר הזה מ-WRead?"
+msgid "Download this book from Readest?"
+msgstr "להוריד את הספר הזה מ-Readest?"
 
 msgid "Download"
 msgstr "הורדה"
@@ -125,8 +125,8 @@ msgstr "עותק ענן אינו זמין."
 msgid "Download failed."
 msgstr "ההורדה נכשלה."
 
-msgid "No cover available on WRead."
-msgstr "אין כריכה זמינה ב-WRead."
+msgid "No cover available on Readest."
+msgstr "אין כריכה זמינה ב-Readest."
 
 msgid "Cover download failed."
 msgstr "הורדת הכריכה נכשלה."
@@ -182,14 +182,14 @@ msgstr "הורד כריכה"
 msgid "Download All"
 msgstr "הורד הכל"
 
-msgid "Open WRead Library"
-msgstr "פתח ספריית WRead"
+msgid "Open Readest Library"
+msgstr "פתח ספריית Readest"
 
-msgid "Push WRead book library"
-msgstr "דחוף את ספריית WRead"
+msgid "Push Readest book library"
+msgstr "דחוף את ספריית Readest"
 
-msgid "Pull WRead book library"
-msgstr "משוך את ספריית WRead"
+msgid "Pull Readest book library"
+msgstr "משוך את ספריית Readest"
 
 msgid "Set auto progress sync"
 msgstr "הגדר סנכרון התקדמות אוטומטי"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "כבוי"
 
 msgid "Toggle auto readest sync"
-msgstr "החלף סנכרון WRead אוטומטי"
+msgstr "החלף סנכרון Readest אוטומטי"
 
 msgid "Push readest progress from this device"
-msgstr "שלח התקדמות WRead ממכשיר זה"
+msgstr "שלח התקדמות Readest ממכשיר זה"
 
 msgid "Pull readest progress from other devices"
-msgstr "משוך התקדמות WRead ממכשירים אחרים"
+msgstr "משוך התקדמות Readest ממכשירים אחרים"
 
 msgid "Push readest annotations from this device"
-msgstr "שלח הערות WRead ממכשיר זה"
+msgstr "שלח הערות Readest ממכשיר זה"
 
 msgid "Pull readest annotations from other devices"
-msgstr "משוך הערות WRead ממכשירים אחרים"
+msgstr "משוך הערות Readest ממכשירים אחרים"
 
-msgid "Add to WRead"
-msgstr "הוסף ל-WRead"
+msgid "Add to Readest"
+msgstr "הוסף ל-Readest"
 
-msgid "Sign in to WRead first."
-msgstr "התחבר תחילה ל-WRead."
+msgid "Sign in to Readest first."
+msgstr "התחבר תחילה ל-Readest."
 
 msgid "File not found."
 msgstr "הקובץ לא נמצא."
@@ -233,14 +233,14 @@ msgstr "מחשב חתימה לספר…"
 msgid "Could not read file."
 msgstr "לא ניתן לקרוא את הקובץ."
 
-msgid "Already in your WRead library:"
-msgstr "כבר בספריית WRead שלך:"
+msgid "Already in your Readest library:"
+msgstr "כבר בספריית Readest שלך:"
 
-msgid "Added to WRead:"
-msgstr "נוסף ל-WRead:"
+msgid "Added to Readest:"
+msgstr "נוסף ל-Readest:"
 
-msgid "Log in WRead Account"
-msgstr "התחבר לחשבון WRead"
+msgid "Log in Readest Account"
+msgstr "התחבר לחשבון Readest"
 
 msgid "Log out as %1"
 msgstr "התנתק מ-%1"
@@ -248,8 +248,8 @@ msgstr "התנתק מ-%1"
 msgid "Auto sync"
 msgstr "סנכרון אוטומטי"
 
-msgid "WRead library"
-msgstr "ספריית WRead"
+msgid "Readest library"
+msgstr "ספריית Readest"
 
 msgid "Push books now"
 msgstr "שלח ספרים עכשיו"
@@ -284,8 +284,8 @@ msgstr "בדוק עדכון"
 msgid "Please login first"
 msgstr "התחבר תחילה"
 
-msgid "Please configure WRead settings first"
-msgstr "הגדר תחילה את הגדרות WRead"
+msgid "Please configure Readest settings first"
+msgstr "הגדר תחילה את הגדרות Readest"
 
 msgid "No book is open"
 msgstr "לא פתוח ספר"
@@ -341,8 +341,8 @@ msgstr "מוריד עדכון…"
 msgid "Failed to download update. Please try again later."
 msgstr "הורדת העדכון נכשלה. נסה שוב מאוחר יותר."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "תוסף WRead עודכן ל-v%1.\n\nהפעל מחדש את KOReader כדי להחיל את העדכון."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "תוסף Readest עודכן ל-v%1.\n\nהפעל מחדש את KOReader כדי להחיל את העדכון."
 
 msgid "Restart now"
 msgstr "הפעל מחדש כעת"
@@ -401,14 +401,14 @@ msgstr "הגדר תחילה את כתובת Supabase ומפתח API"
 msgid "Logging in..."
 msgstr "מתחבר…"
 
-msgid "Successfully logged in to WRead"
-msgstr "התחברת ל-WRead בהצלחה"
+msgid "Successfully logged in to Readest"
+msgstr "התחברת ל-Readest בהצלחה"
 
 msgid "Login failed: %1"
 msgstr "ההתחברות נכשלה: %1"
 
-msgid "Logged out from WRead"
-msgstr "התנתקת מ-WRead"
+msgid "Logged out from Readest"
+msgstr "התנתקת מ-Readest"
 
 msgid "Cannot identify the current book"
 msgstr "לא ניתן לזהות את הספר הנוכחי"

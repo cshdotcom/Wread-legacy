@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Uzbek\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "KOReader va WRead qurilmalaringizni sinxronlashda saqlaydi."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "KOReader va Readest qurilmalaringizni sinxronlashda saqlaydi."
 
 msgid "Library view"
 msgstr "Kutubxona koʻrinishi"
@@ -77,14 +77,14 @@ msgstr "Yuklab olish jildi…"
 msgid "Pick a folder for downloaded books"
 msgstr "Yuklab olingan kitoblar uchun jildni tanlang"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "Kutubxonani ochish uchun WRead-ga kiring"
+msgid "Sign in to Readest to open the Library"
+msgstr "Kutubxonani ochish uchun Readest-ga kiring"
 
 msgid "Library"
 msgstr "Kutubxona"
 
-msgid "WRead Library"
-msgstr "WRead kutubxonasi"
+msgid "Readest Library"
+msgstr "Readest kutubxonasi"
 
 msgid "Cancel"
 msgstr "Bekor qilish"
@@ -107,8 +107,8 @@ msgstr "Toʻliq kutubxona koʻrinishi uchun Cover Browser plagini talab qilinadi
 msgid "File moved or deleted. Rescan library?"
 msgstr "Fayl koʻchirilgan yoki oʻchirilgan. Kutubxonani qayta skanerlaysizmi?"
 
-msgid "Download this book from WRead?"
-msgstr "Ushbu kitobni WRead-dan yuklab olasizmi?"
+msgid "Download this book from Readest?"
+msgstr "Ushbu kitobni Readest-dan yuklab olasizmi?"
 
 msgid "Download"
 msgstr "Yuklab olish"
@@ -125,8 +125,8 @@ msgstr "Bulutdagi nusxa mavjud emas."
 msgid "Download failed."
 msgstr "Yuklab olib boʻlmadi."
 
-msgid "No cover available on WRead."
-msgstr "WRead-da muqova mavjud emas."
+msgid "No cover available on Readest."
+msgstr "Readest-da muqova mavjud emas."
 
 msgid "Cover download failed."
 msgstr "Muqovani yuklab olib boʻlmadi."
@@ -182,14 +182,14 @@ msgstr "Muqovani yuklab olish"
 msgid "Download All"
 msgstr "Barchasini yuklab olish"
 
-msgid "Open WRead Library"
-msgstr "WRead kutubxonasini ochish"
+msgid "Open Readest Library"
+msgstr "Readest kutubxonasini ochish"
 
-msgid "Push WRead book library"
-msgstr "WRead kitob kutubxonasini yuborish"
+msgid "Push Readest book library"
+msgstr "Readest kitob kutubxonasini yuborish"
 
-msgid "Pull WRead book library"
-msgstr "WRead kitob kutubxonasini olish"
+msgid "Pull Readest book library"
+msgstr "Readest kitob kutubxonasini olish"
 
 msgid "Set auto progress sync"
 msgstr "Avtomatik jarayon sinxronlashni belgilash"
@@ -204,22 +204,22 @@ msgid "Toggle auto readest sync"
 msgstr "Avtomatik readest sinxronlashni ochish/yopish"
 
 msgid "Push readest progress from this device"
-msgstr "WRead jarayonini ushbu qurilmadan yuborish"
+msgstr "Readest jarayonini ushbu qurilmadan yuborish"
 
 msgid "Pull readest progress from other devices"
-msgstr "WRead jarayonini boshqa qurilmalardan olish"
+msgstr "Readest jarayonini boshqa qurilmalardan olish"
 
 msgid "Push readest annotations from this device"
-msgstr "WRead izohlarini ushbu qurilmadan yuborish"
+msgstr "Readest izohlarini ushbu qurilmadan yuborish"
 
 msgid "Pull readest annotations from other devices"
-msgstr "WRead izohlarini boshqa qurilmalardan olish"
+msgstr "Readest izohlarini boshqa qurilmalardan olish"
 
-msgid "Add to WRead"
-msgstr "WRead-ga qoʻshish"
+msgid "Add to Readest"
+msgstr "Readest-ga qoʻshish"
 
-msgid "Sign in to WRead first."
-msgstr "Avval WRead-ga kiring."
+msgid "Sign in to Readest first."
+msgstr "Avval Readest-ga kiring."
 
 msgid "File not found."
 msgstr "Fayl topilmadi."
@@ -233,14 +233,14 @@ msgstr "Kitob xeshlanmoqda…"
 msgid "Could not read file."
 msgstr "Faylni oʻqib boʻlmadi."
 
-msgid "Already in your WRead library:"
-msgstr "Allaqachon WRead kutubxonangizda:"
+msgid "Already in your Readest library:"
+msgstr "Allaqachon Readest kutubxonangizda:"
 
-msgid "Added to WRead:"
-msgstr "WRead-ga qoʻshildi:"
+msgid "Added to Readest:"
+msgstr "Readest-ga qoʻshildi:"
 
-msgid "Log in WRead Account"
-msgstr "WRead hisobiga kirish"
+msgid "Log in Readest Account"
+msgstr "Readest hisobiga kirish"
 
 msgid "Log out as %1"
 msgstr "%1 sifatida chiqish"
@@ -248,8 +248,8 @@ msgstr "%1 sifatida chiqish"
 msgid "Auto sync"
 msgstr "Avtomatik sinxronlash"
 
-msgid "WRead library"
-msgstr "WRead kutubxonasi"
+msgid "Readest library"
+msgstr "Readest kutubxonasi"
 
 msgid "Push books now"
 msgstr "Kitoblarni hozir yuborish"
@@ -284,8 +284,8 @@ msgstr "Yangilanishni tekshirish"
 msgid "Please login first"
 msgstr "Iltimos, avval tizimga kiring"
 
-msgid "Please configure WRead settings first"
-msgstr "Iltimos, avval WRead sozlamalarini sozlang"
+msgid "Please configure Readest settings first"
+msgstr "Iltimos, avval Readest sozlamalarini sozlang"
 
 msgid "No book is open"
 msgstr "Hech qanday kitob ochilmagan"
@@ -341,8 +341,8 @@ msgstr "Yangilanish yuklanmoqda…"
 msgid "Failed to download update. Please try again later."
 msgstr "Yangilanishni yuklab boʻlmadi. Keyinroq qayta urinib koʻring."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "WRead plagini v%1 ga yangilandi.\n\nYangilanishni qoʻllash uchun KOReader-ni qayta ishga tushiring."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Readest plagini v%1 ga yangilandi.\n\nYangilanishni qoʻllash uchun KOReader-ni qayta ishga tushiring."
 
 msgid "Restart now"
 msgstr "Hozir qayta ishga tushirish"
@@ -401,14 +401,14 @@ msgstr "Iltimos, avval Supabase URL va API kalitini sozlang"
 msgid "Logging in..."
 msgstr "Tizimga kirilmoqda..."
 
-msgid "Successfully logged in to WRead"
-msgstr "WRead-ga muvaffaqiyatli kirildi"
+msgid "Successfully logged in to Readest"
+msgstr "Readest-ga muvaffaqiyatli kirildi"
 
 msgid "Login failed: %1"
 msgstr "Kirish muvaffaqiyatsiz tugadi: %1"
 
-msgid "Logged out from WRead"
-msgstr "WRead-dan chiqildi"
+msgid "Logged out from Readest"
+msgstr "Readest-dan chiqildi"
 
 msgid "Cannot identify the current book"
 msgstr "Joriy kitobni aniqlab boʻlmadi"

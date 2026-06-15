@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "Houdt je KOReader- en WRead-apparaten gesynchroniseerd."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "Houdt je KOReader- en Readest-apparaten gesynchroniseerd."
 
 msgid "Library view"
 msgstr "Bibliotheekweergave"
@@ -77,14 +77,14 @@ msgstr "Downloadmap …"
 msgid "Pick a folder for downloaded books"
 msgstr "Kies een map voor gedownloade boeken"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "Meld je aan bij WRead om de bibliotheek te openen"
+msgid "Sign in to Readest to open the Library"
+msgstr "Meld je aan bij Readest om de bibliotheek te openen"
 
 msgid "Library"
 msgstr "Bibliotheek"
 
-msgid "WRead Library"
-msgstr "WRead-bibliotheek"
+msgid "Readest Library"
+msgstr "Readest-bibliotheek"
 
 msgid "Cancel"
 msgstr "Annuleren"
@@ -107,8 +107,8 @@ msgstr "Cover Browser-plug-in vereist voor volledige bibliotheekweergave. Terug 
 msgid "File moved or deleted. Rescan library?"
 msgstr "Bestand verplaatst of verwijderd. Bibliotheek opnieuw scannen?"
 
-msgid "Download this book from WRead?"
-msgstr "Dit boek van WRead downloaden?"
+msgid "Download this book from Readest?"
+msgstr "Dit boek van Readest downloaden?"
 
 msgid "Download"
 msgstr "Downloaden"
@@ -125,8 +125,8 @@ msgstr "Cloud-kopie niet beschikbaar."
 msgid "Download failed."
 msgstr "Downloaden mislukt."
 
-msgid "No cover available on WRead."
-msgstr "Geen omslag beschikbaar op WRead."
+msgid "No cover available on Readest."
+msgstr "Geen omslag beschikbaar op Readest."
 
 msgid "Cover download failed."
 msgstr "Omslag downloaden mislukt."
@@ -182,14 +182,14 @@ msgstr "Omslag downloaden"
 msgid "Download All"
 msgstr "Alles downloaden"
 
-msgid "Open WRead Library"
-msgstr "WRead-bibliotheek openen"
+msgid "Open Readest Library"
+msgstr "Readest-bibliotheek openen"
 
-msgid "Push WRead book library"
-msgstr "WRead-bibliotheek pushen"
+msgid "Push Readest book library"
+msgstr "Readest-bibliotheek pushen"
 
-msgid "Pull WRead book library"
-msgstr "WRead-bibliotheek pullen"
+msgid "Pull Readest book library"
+msgstr "Readest-bibliotheek pullen"
 
 msgid "Set auto progress sync"
 msgstr "Automatische voortgangssynchronisatie instellen"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "uit"
 
 msgid "Toggle auto readest sync"
-msgstr "Automatische WRead-synchronisatie aan/uit"
+msgstr "Automatische Readest-synchronisatie aan/uit"
 
 msgid "Push readest progress from this device"
-msgstr "WRead-voortgang van dit apparaat verzenden"
+msgstr "Readest-voortgang van dit apparaat verzenden"
 
 msgid "Pull readest progress from other devices"
-msgstr "WRead-voortgang van andere apparaten ophalen"
+msgstr "Readest-voortgang van andere apparaten ophalen"
 
 msgid "Push readest annotations from this device"
-msgstr "WRead-aantekeningen van dit apparaat verzenden"
+msgstr "Readest-aantekeningen van dit apparaat verzenden"
 
 msgid "Pull readest annotations from other devices"
-msgstr "WRead-aantekeningen van andere apparaten ophalen"
+msgstr "Readest-aantekeningen van andere apparaten ophalen"
 
-msgid "Add to WRead"
-msgstr "Toevoegen aan WRead"
+msgid "Add to Readest"
+msgstr "Toevoegen aan Readest"
 
-msgid "Sign in to WRead first."
-msgstr "Meld je eerst aan bij WRead."
+msgid "Sign in to Readest first."
+msgstr "Meld je eerst aan bij Readest."
 
 msgid "File not found."
 msgstr "Bestand niet gevonden."
@@ -233,14 +233,14 @@ msgstr "Boek wordt gehasht …"
 msgid "Could not read file."
 msgstr "Kon het bestand niet lezen."
 
-msgid "Already in your WRead library:"
-msgstr "Al in je WRead-bibliotheek:"
+msgid "Already in your Readest library:"
+msgstr "Al in je Readest-bibliotheek:"
 
-msgid "Added to WRead:"
-msgstr "Toegevoegd aan WRead:"
+msgid "Added to Readest:"
+msgstr "Toegevoegd aan Readest:"
 
-msgid "Log in WRead Account"
-msgstr "Aanmelden bij WRead-account"
+msgid "Log in Readest Account"
+msgstr "Aanmelden bij Readest-account"
 
 msgid "Log out as %1"
 msgstr "Afmelden als %1"
@@ -248,8 +248,8 @@ msgstr "Afmelden als %1"
 msgid "Auto sync"
 msgstr "Automatische synchronisatie"
 
-msgid "WRead library"
-msgstr "WRead-bibliotheek"
+msgid "Readest library"
+msgstr "Readest-bibliotheek"
 
 msgid "Push books now"
 msgstr "Boeken nu pushen"
@@ -284,8 +284,8 @@ msgstr "Controleer op update"
 msgid "Please login first"
 msgstr "Meld eerst aan"
 
-msgid "Please configure WRead settings first"
-msgstr "Configureer eerst de WRead-instellingen"
+msgid "Please configure Readest settings first"
+msgstr "Configureer eerst de Readest-instellingen"
 
 msgid "No book is open"
 msgstr "Geen boek geopend"
@@ -341,8 +341,8 @@ msgstr "Update wordt gedownload…"
 msgid "Failed to download update. Please try again later."
 msgstr "Update downloaden mislukt. Probeer het later opnieuw."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "WRead-plug-in bijgewerkt naar v%1.\n\nStart KOReader opnieuw op om de update toe te passen."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Readest-plug-in bijgewerkt naar v%1.\n\nStart KOReader opnieuw op om de update toe te passen."
 
 msgid "Restart now"
 msgstr "Nu opnieuw opstarten"
@@ -401,14 +401,14 @@ msgstr "Configureer eerst Supabase-URL en API-sleutel"
 msgid "Logging in..."
 msgstr "Aanmelden…"
 
-msgid "Successfully logged in to WRead"
-msgstr "Aangemeld bij WRead"
+msgid "Successfully logged in to Readest"
+msgstr "Aangemeld bij Readest"
 
 msgid "Login failed: %1"
 msgstr "Aanmelden mislukt: %1"
 
-msgid "Logged out from WRead"
-msgstr "Afgemeld bij WRead"
+msgid "Logged out from Readest"
+msgstr "Afgemeld bij Readest"
 
 msgid "Cannot identify the current book"
 msgstr "Huidig boek kan niet worden geïdentificeerd"

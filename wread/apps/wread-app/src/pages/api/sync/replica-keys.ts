@@ -1,49 +1,41 @@
+/**
+ * WRead Sync Replica Keys API Route
+ * Rewritten to use local SQLite instead of Supabase.
+ * Simplified replica key management for self-hosted deployment.
+ */
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
-import { createSupabaseClient } from '@/utils/supabase';
-import { validateUserAndToken } from '@/utils/access';
+import { validateUserAndToken } from '@/utils/wread-auth';
+import { getDb } from '@/utils/wread-db';
 import { runMiddleware, corsAllMethods } from '@/utils/cors';
+import { v4 as uuidv4 } from 'uuid';
 
 const SUPPORTED_ALGS = new Set<string>(['pbkdf2-600k-sha256']);
 
-interface ReplicaKeyRpcRow {
-  salt_id: string;
-  alg: string;
-  salt_b64: string;
-  created_at: string;
-}
-
-interface ReplicaKeyResponseRow {
-  saltId: string;
-  alg: string;
-  salt: string;
-  createdAt: string;
-}
-
 const errorResponse = (status: number, code: string, message: string) =>
   NextResponse.json({ error: message, code }, { status });
-
-const toResponseRow = (row: ReplicaKeyRpcRow): ReplicaKeyResponseRow => ({
-  saltId: row.salt_id,
-  alg: row.alg,
-  salt: row.salt_b64,
-  createdAt: row.created_at,
-});
 
 export async function GET(req: NextRequest) {
   const { user, token } = await validateUserAndToken(req.headers.get('authorization'));
   if (!user || !token) {
     return errorResponse(401, 'AUTH', 'Not authenticated');
   }
-  const supabase = createSupabaseClient(token);
+  const userId = (user as Record<string, unknown>).id as string;
 
-  const { data, error } = await supabase.rpc('replica_keys_list');
-  if (error) {
-    console.error('replica_keys_list failed', { userId: user.id, error });
-    return errorResponse(500, 'SERVER', error.message);
+  try {
+    const db = getDb();
+    const rows = db.prepare('SELECT * FROM replica_keys WHERE user_id = ?').all(userId);
+    const mapped = rows.map((row: Record<string, unknown>) => ({
+      saltId: row.id,
+      alg: 'pbkdf2-600k-sha256',
+      salt: row.key_data,
+      createdAt: row.created_at,
+    }));
+    return NextResponse.json({ rows: mapped }, { status: 200 });
+  } catch (error) {
+    console.error('Replica keys list error:', error);
+    return errorResponse(500, 'SERVER', error instanceof Error ? error.message : 'Unknown error');
   }
-  const rows = (data ?? []) as ReplicaKeyRpcRow[];
-  return NextResponse.json({ rows: rows.map(toResponseRow) }, { status: 200 });
 }
 
 export async function POST(req: NextRequest) {
@@ -51,6 +43,7 @@ export async function POST(req: NextRequest) {
   if (!user || !token) {
     return errorResponse(401, 'AUTH', 'Not authenticated');
   }
+  const userId = (user as Record<string, unknown>).id as string;
 
   let body: unknown;
   try {
@@ -58,6 +51,7 @@ export async function POST(req: NextRequest) {
   } catch {
     return errorResponse(400, 'VALIDATION', 'Invalid JSON body');
   }
+
   const alg =
     typeof body === 'object' && body !== null && 'alg' in body
       ? (body as { alg: unknown }).alg
@@ -66,15 +60,32 @@ export async function POST(req: NextRequest) {
     return errorResponse(422, 'UNSUPPORTED_ALG', `Unsupported alg: ${String(alg)}`);
   }
 
-  const supabase = createSupabaseClient(token);
-  const { data, error } = await supabase
-    .rpc('replica_keys_create', { p_alg: alg })
-    .single<ReplicaKeyRpcRow>();
-  if (error || !data) {
-    console.error('replica_keys_create failed', { userId: user.id, error });
-    return errorResponse(500, 'SERVER', error?.message ?? 'replica_keys_create returned no row');
+  try {
+    const db = getDb();
+    const id = uuidv4();
+    // Generate a random salt
+    const crypto = await import('crypto');
+    const salt = crypto.randomBytes(32).toString('base64');
+
+    // For simplicity, key_data stores the salt; replica_id links to the user's first replica
+    const replicaId = uuidv4();
+    db.prepare(`
+      INSERT INTO replica_keys (id, user_id, replica_id, key_data, created_at)
+      VALUES (?, ?, ?, ?, datetime('now'))
+    `).run(id, userId, replicaId, salt);
+
+    return NextResponse.json({
+      row: {
+        saltId: id,
+        alg,
+        salt,
+        createdAt: new Date().toISOString(),
+      },
+    }, { status: 201 });
+  } catch (error) {
+    console.error('Replica key create error:', error);
+    return errorResponse(500, 'SERVER', error instanceof Error ? error.message : 'Unknown error');
   }
-  return NextResponse.json({ row: toResponseRow(data) }, { status: 201 });
 }
 
 export async function DELETE(req: NextRequest) {
@@ -82,13 +93,16 @@ export async function DELETE(req: NextRequest) {
   if (!user || !token) {
     return errorResponse(401, 'AUTH', 'Not authenticated');
   }
-  const supabase = createSupabaseClient(token);
-  const { error } = await supabase.rpc('replica_keys_forget');
-  if (error) {
-    console.error('replica_keys_forget failed', { userId: user.id, error });
-    return errorResponse(500, 'SERVER', error.message);
+  const userId = (user as Record<string, unknown>).id as string;
+
+  try {
+    const db = getDb();
+    db.prepare('DELETE FROM replica_keys WHERE user_id = ?').run(userId);
+    return NextResponse.json({ ok: true }, { status: 200 });
+  } catch (error) {
+    console.error('Replica keys forget error:', error);
+    return errorResponse(500, 'SERVER', error instanceof Error ? error.message : 'Unknown error');
   }
-  return NextResponse.json({ ok: true }, { status: 200 });
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -128,12 +142,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     res.status(response.status);
-    response.headers.forEach((value, key) => {
-      res.setHeader(key, value);
-    });
-
-    const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
+    response.headers.forEach((value, key) => res.setHeader(key, value));
+    const buffer = Buffer.from(await response.arrayBuffer());
     res.send(buffer);
   } catch (error) {
     console.error('Error processing /api/sync/replica-keys request:', error);

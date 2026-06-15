@@ -1,27 +1,24 @@
+/**
+ * WRead Sync Replicas API Route
+ * Rewritten to use local SQLite instead of Supabase.
+ * Simplified replica sync for self-hosted deployment.
+ */
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
-import { createSupabaseClient } from '@/utils/supabase';
-import { validateUserAndToken } from '@/utils/access';
+import { validateUserAndToken } from '@/utils/wread-auth';
+import { getDb } from '@/utils/wread-db';
 import { runMiddleware, corsAllMethods } from '@/utils/cors';
-import { validatePullBatch, validatePullParams, validatePushBatch } from '@/libs/replicaSyncServer';
-import type { ReplicaRow } from '@/types/replica';
+import { v4 as uuidv4 } from 'uuid';
 
-const errorResponse = (status: number, code: string, message: string, offendingIndex?: number) =>
-  NextResponse.json(
-    {
-      error: message,
-      code,
-      ...(typeof offendingIndex === 'number' ? { offendingIndex } : {}),
-    },
-    { status },
-  );
+const errorResponse = (status: number, code: string, message: string) =>
+  NextResponse.json({ error: message, code }, { status });
 
 export async function POST(req: NextRequest) {
   const { user, token } = await validateUserAndToken(req.headers.get('authorization'));
   if (!user || !token) {
     return errorResponse(401, 'AUTH', 'Not authenticated');
   }
-  const supabase = createSupabaseClient(token);
+  const userId = (user as Record<string, unknown>).id as string;
 
   let body: unknown;
   try {
@@ -30,84 +27,64 @@ export async function POST(req: NextRequest) {
     return errorResponse(400, 'VALIDATION', 'Invalid JSON body');
   }
 
-  // Body discriminator: `{ cursors: [...] }` is a batched pull (replaces
-  // N parallel `GET ?kind=K&since=…` calls with a single Worker
-  // invocation); `{ rows: [...] }` is the existing push.
-  if (typeof body === 'object' && body !== null && 'cursors' in body) {
-    const validation = validatePullBatch(body);
-    if (!validation.ok) {
-      return errorResponse(
-        validation.status,
-        validation.code,
-        validation.message,
-        validation.offendingIndex,
-      );
-    }
-    const { cursors } = validation.params;
-    if (cursors.length === 0) {
-      return NextResponse.json({ results: [] }, { status: 200 });
-    }
-    // Per-kind queries run in parallel: each is the same SELECT the
-    // single-kind GET issues, just dispatched together. Supabase calls
-    // inside a Worker aren't billed as Cloudflare requests, so this
-    // collapses N Worker invocations to 1 without changing DB load.
-    try {
-      const tasks = cursors.map(async ({ kind, since }) => {
-        let query = supabase
-          .from('replicas')
-          .select('*')
-          .eq('user_id', user.id)
-          .eq('kind', kind)
-          .order('updated_at_ts', { ascending: true })
-          .limit(1000);
-        if (since) query = query.gt('updated_at_ts', since);
-        const { data, error } = await query;
-        if (error) throw new Error(`pull replicas (kind=${kind}) failed: ${error.message}`);
-        return { kind, rows: (data ?? []) as ReplicaRow[] };
+  try {
+    const db = getDb();
+
+    // Batch pull: { cursors: [...] }
+    if (typeof body === 'object' && body !== null && 'cursors' in body) {
+      const cursors = (body as { cursors: Array<{ kind: string; since?: string }> }).cursors;
+      const results = cursors.map(({ kind, since }) => {
+        let sql = 'SELECT * FROM replicas WHERE user_id = ? AND book_hash = ?';
+        const params: unknown[] = [userId, kind];
+        if (since) {
+          sql += ' AND updated_at > ?';
+          params.push(since);
+        }
+        sql += ' ORDER BY updated_at ASC LIMIT 1000';
+        return { kind, rows: db.prepare(sql).all(...params) };
       });
-      const results = await Promise.all(tasks);
       return NextResponse.json({ results }, { status: 200 });
-    } catch (error) {
-      console.error('batch pull replicas failed', { cursors, error });
-      const message = error instanceof Error ? error.message : 'unknown error';
-      return errorResponse(500, 'SERVER', message);
     }
-  }
 
-  const validation = validatePushBatch(body, user.id, Date.now());
-  if (!validation.ok) {
-    return errorResponse(
-      validation.status,
-      validation.code,
-      validation.message,
-      validation.offendingIndex,
-    );
-  }
+    // Push: { rows: [...] }
+    if (typeof body === 'object' && body !== null && 'rows' in body) {
+      const rows = (body as { rows: Array<Record<string, unknown>> }).rows;
+      const merged: Record<string, unknown>[] = [];
 
-  const merged: ReplicaRow[] = [];
-  for (const row of validation.rows) {
-    const { data, error } = await supabase
-      .rpc('crdt_merge_replica', {
-        p_user_id: row.user_id,
-        p_kind: row.kind,
-        p_replica_id: row.replica_id,
-        p_fields_jsonb: row.fields_jsonb,
-        p_manifest_jsonb: row.manifest_jsonb,
-        p_deleted_at_ts: row.deleted_at_ts,
-        p_reincarnation: row.reincarnation,
-        p_updated_at_ts: row.updated_at_ts,
-        p_schema_version: row.schema_version,
-      })
-      .single<ReplicaRow>();
+      for (const row of rows) {
+        const replicaId = row.replica_id as string;
+        const bookHash = row.book_hash as string || '';
+        const data = row.data ? JSON.stringify(row.data) : null;
 
-    if (error) {
-      console.error('crdt_merge_replica failed', { row, error });
-      return errorResponse(500, 'SERVER', error.message);
+        // Upsert replica
+        const existing = db.prepare(
+          'SELECT * FROM replicas WHERE user_id = ? AND replica_id = ?'
+        ).get(userId, replicaId) as Record<string, unknown> | undefined;
+
+        if (!existing) {
+          const id = uuidv4();
+          db.prepare(`
+            INSERT INTO replicas (id, user_id, book_hash, replica_id, data, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+          `).run(id, userId, bookHash, replicaId, data);
+          merged.push({ ...row, id });
+        } else {
+          db.prepare(`
+            UPDATE replicas SET data = ?, updated_at = datetime('now')
+            WHERE user_id = ? AND replica_id = ?
+          `).run(data, userId, replicaId);
+          merged.push({ ...row, id: existing.id });
+        }
+      }
+
+      return NextResponse.json({ rows: merged }, { status: 200 });
     }
-    if (data) merged.push(data);
-  }
 
-  return NextResponse.json({ rows: merged }, { status: 200 });
+    return errorResponse(400, 'VALIDATION', 'Invalid request body');
+  } catch (error) {
+    console.error('Replicas sync error:', error);
+    return errorResponse(500, 'SERVER', error instanceof Error ? error.message : 'Unknown error');
+  }
 }
 
 export async function GET(req: NextRequest) {
@@ -115,32 +92,33 @@ export async function GET(req: NextRequest) {
   if (!user || !token) {
     return errorResponse(401, 'AUTH', 'Not authenticated');
   }
-  const supabase = createSupabaseClient(token);
+  const userId = (user as Record<string, unknown>).id as string;
 
   const { searchParams } = new URL(req.url);
-  const validation = validatePullParams(searchParams.get('kind'), searchParams.get('since'));
-  if (!validation.ok) {
-    return errorResponse(validation.status, validation.code, validation.message);
+  const kind = searchParams.get('kind');
+  const since = searchParams.get('since');
+
+  try {
+    const db = getDb();
+    let sql = 'SELECT * FROM replicas WHERE user_id = ?';
+    const params: unknown[] = [userId];
+
+    if (kind) {
+      sql += ' AND book_hash = ?';
+      params.push(kind);
+    }
+    if (since) {
+      sql += ' AND updated_at > ?';
+      params.push(since);
+    }
+    sql += ' ORDER BY updated_at ASC LIMIT 1000';
+
+    const rows = db.prepare(sql).all(...params);
+    return NextResponse.json({ rows }, { status: 200 });
+  } catch (error) {
+    console.error('Replicas pull error:', error);
+    return errorResponse(500, 'SERVER', error instanceof Error ? error.message : 'Unknown error');
   }
-  const { kind, since } = validation.params;
-
-  let query = supabase
-    .from('replicas')
-    .select('*')
-    .eq('user_id', user.id)
-    .eq('kind', kind)
-    .order('updated_at_ts', { ascending: true })
-    .limit(1000);
-
-  if (since) query = query.gt('updated_at_ts', since);
-
-  const { data, error } = await query;
-  if (error) {
-    console.error('pull replicas failed', { kind, since, error });
-    return errorResponse(500, 'SERVER', error.message);
-  }
-
-  return NextResponse.json({ rows: data ?? [] }, { status: 200 });
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -174,12 +152,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     res.status(response.status);
-    response.headers.forEach((value, key) => {
-      res.setHeader(key, value);
-    });
-
-    const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
+    response.headers.forEach((value, key) => res.setHeader(key, value));
+    const buffer = Buffer.from(await response.arrayBuffer());
     res.send(buffer);
   } catch (error) {
     console.error('Error processing /api/sync/replicas request:', error);

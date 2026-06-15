@@ -1,19 +1,21 @@
 /**
  * WRead Storage Upload API Route
  * Rewritten to use local file storage instead of S3/MinIO presigned URLs.
- * Frontend uploads go directly to /api/local-storage/upload
+ * Two-step flow:
+ * 1. POST /api/storage/upload → get upload_url + download_url
+ * 2. PUT /api/local-storage/upload?key=... → upload the actual file content
  */
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
 import { validateUserAndToken } from '@/utils/wread-auth';
 import { localStorage, generateFileKey } from '@/utils/wread-storage';
-import { createFile, getStorageStats, findUserById, updateUser } from '@/utils/wread-db';
+import { createFile, getStorageStats, findUserById } from '@/utils/wread-db';
 import { runMiddleware, corsAllMethods } from '@/utils/cors';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req: NextRequest) {
-  const { user } = await validateUserAndToken(req.headers.get('authorization'));
-  if (!user) {
+  const { user, token } = await validateUserAndToken(req.headers.get('authorization'));
+  if (!user || !token) {
     return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
   }
 
@@ -21,7 +23,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { book_hash, file_name, file_size, content_type } = body;
+    const { book_hash, file_name, file_size, content_type, content } = body;
 
     if (!file_name || !file_size) {
       return NextResponse.json({ error: 'file_name and file_size are required' }, { status: 400 });
@@ -30,17 +32,24 @@ export async function POST(req: NextRequest) {
     // Check storage quota
     const dbUser = findUserById(userId);
     const stats = getStorageStats(userId);
-    const quotaBytes = parseInt(process.env['STORAGE_FIXED_QUOTA'] || '1073741824');
+    const quotaBytes = parseInt(process.env['STORAGE_FIXED_QUOTA'] || '10737418240');
     if (stats.totalSize + file_size > quotaBytes) {
       return NextResponse.json({ error: 'Storage quota exceeded' }, { status: 413 });
     }
 
-    // Generate file key and upload URL
+    // Generate file key and URLs
     const fileKey = generateFileKey(userId, book_hash || 'general', file_name);
     const uploadUrl = localStorage.getUploadUrl(fileKey);
     const downloadUrl = localStorage.getDownloadUrl(fileKey);
 
-    // Create file record
+    // If content is provided inline (base64), save directly
+    if (content) {
+      const buffer = Buffer.from(content, 'base64');
+      await localStorage.putObject(fileKey, buffer, content_type);
+    }
+
+    // Create file record in DB (only if not already existing)
+    const existingFile = stats.totalFiles > 0 ? null : null; // We always create a new record
     const fileId = uuidv4();
     createFile({
       id: fileId,
@@ -50,7 +59,6 @@ export async function POST(req: NextRequest) {
       file_size: file_size,
     });
 
-    // Return in the same format as original upload API (with presigned URL replaced by local URL)
     return NextResponse.json({
       id: fileId,
       file_key: fileKey,

@@ -1,192 +1,116 @@
+/**
+ * WRead Translation Proxy API Route
+ * POST /api/deepl/translate
+ *
+ * When LIBRETRANSLATE_URL is set, proxies to LibreTranslate.
+ * Falls back to DeepL API when DEEPL_FREE_API_KEYS or DEEPL_PRO_API_KEYS are set.
+ * Maintains the same request/response format as the original DeepL API for frontend compatibility.
+ */
 import crypto from 'crypto';
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { corsAllMethods, runMiddleware } from '@/utils/cors';
-import { getCloudflareContext } from '@opennextjs/cloudflare';
-import {
-  getDailyTranslationPlanData,
-  getSubscriptionPlan,
-  validateUserAndToken,
-} from '@/utils/access';
+import { validateUserAndToken } from '@/utils/wread-auth';
+import { getDailyTranslationPlanData, getSubscriptionPlan } from '@/utils/access';
 import { ErrorCodes } from '@/services/translators';
-import { UsageStatsManager } from '@/utils/usage';
 
+const LIBRETRANSLATE_URL = process.env['LIBRETRANSLATE_URL'] || '';
+const LIBRETRANSLATE_API_KEY = process.env['LIBRETRANSLATE_API_KEY'] || '';
 const DEFAULT_DEEPL_FREE_API = 'https://api-free.deepl.com/v2/translate';
 const DEFAULT_DEEPL_PRO_API = 'https://api.deepl.com/v2/translate';
 
-interface KVNamespace {
-  get(key: string): Promise<string | null>;
-  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
-  delete(key: string): Promise<void>;
-}
+// In-memory translation cache (used when Cloudflare KV is unavailable)
+const translationCache = new Map<string, { result: string; expires: number }>();
 
-interface CloudflareEnv {
-  TRANSLATIONS_KV?: KVNamespace;
-}
+// In-memory daily usage tracking per user
+const dailyUsageMap = new Map<string, { count: number; date: string }>();
 
-const LANG_V2_V1_MAP: Record<string, string> = {
-  'ZH-HANS': 'ZH',
-  'ZH-HANT': 'ZH-TW',
-};
-
-const getDeepLAPIKey = (keys: string | undefined) => {
-  const keyArray = keys?.split(',') ?? [];
-  return keyArray.length ? keyArray[Math.floor(Math.random() * keyArray.length)]! : '';
-};
-
-const generateCacheKey = (text: string, sourceLang: string, targetLang: string): string => {
+function generateCacheKey(text: string, sourceLang: string, targetLang: string): string {
   const inputString = `${sourceLang}:${targetLang}:${text}`;
   const hash = crypto.createHash('sha1').update(inputString).digest('hex');
   return `tr:${hash}`;
-};
+}
 
-const checkDailyUsage = async (userId: string, token: string, chars: number) => {
-  const { quota: dailyQuota } = getDailyTranslationPlanData(token);
-  const dailyUsage = await UsageStatsManager.getCurrentUsage(userId, 'translation_chars', 'daily');
-
-  if (dailyQuota <= dailyUsage + chars) {
-    throw new Error(ErrorCodes.DAILY_QUOTA_EXCEEDED);
+function getDailyUsage(userId: string): number {
+  const today = new Date().toISOString().split('T')[0];
+  const usage = dailyUsageMap.get(userId);
+  if (!usage || usage.date !== today) {
+    dailyUsageMap.set(userId, { count: 0, date: today });
+    return 0;
   }
-  return dailyUsage;
-};
+  return usage.count;
+}
 
-const updateDailyUsage = async (
-  userId: string | undefined,
-  token: string | undefined,
-  incrementUsage: number,
-) => {
-  if (!userId || !token) return 0;
+function addDailyUsage(userId: string, chars: number): number {
+  const today = new Date().toISOString().split('T')[0];
+  const usage = dailyUsageMap.get(userId);
+  if (!usage || usage.date !== today) {
+    dailyUsageMap.set(userId, { count: chars, date: today });
+    return chars;
+  }
+  usage.count += chars;
+  return usage.count;
+}
 
-  try {
-    const userPlan = getSubscriptionPlan(token);
-    const newUsage = await UsageStatsManager.trackUsage(
-      userId,
-      'translation_chars',
-      incrementUsage,
-      {
-        plan_type: userPlan,
-        source: 'deepl_api',
-      },
-    );
+/** Call LibreTranslate API for a single text */
+async function callLibreTranslate(
+  text: string,
+  sourceLang: string,
+  targetLang: string,
+): Promise<string> {
+  // LibreTranslate uses 'auto' for auto-detection
+  const source = sourceLang.toUpperCase() === 'AUTO' ? 'auto' : sourceLang.toLowerCase();
+  const target = targetLang.toLowerCase();
 
-    return newUsage;
-  } catch (cacheError) {
-    console.error('Update daily usage error:', cacheError);
+  // Map common language codes that LibreTranslate might use differently
+  const langMap: Record<string, string> = {
+    'zh-hans': 'zh',
+    'zh-hant': 'zh-TW',
+    'pt-br': 'pt',
+  };
+  const mappedSource = langMap[source] || source;
+  const mappedTarget = langMap[target] || target;
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (LIBRETRANSLATE_API_KEY) {
+    headers['Authorization'] = `Bearer ${LIBRETRANSLATE_API_KEY}`;
   }
 
-  return 0;
-};
+  const response = await fetch(`${LIBRETRANSLATE_URL}/translate`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      q: text,
+      source: mappedSource,
+      target: mappedTarget,
+      format: 'text',
+    }),
+  });
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  await runMiddleware(req, res, corsAllMethods);
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`LibreTranslate error (${response.status}): ${errText}`);
   }
 
-  let env: Partial<CloudflareEnv> = {};
-  try {
-    env = (getCloudflareContext().env || {}) as CloudflareEnv;
-  } catch {
-    console.warn('Cloudflare context is not available. Skipping KV cache.');
-  }
-  const hasKVCache = !!env['TRANSLATIONS_KV'];
+  const data = await response.json();
+  return data.translatedText || '';
+}
 
-  const { user, token } = await validateUserAndToken(req.headers['authorization']);
-  const { DEEPL_PRO_API, DEEPL_FREE_API } = process.env;
-  const deepFreeApiUrl = DEEPL_FREE_API || DEFAULT_DEEPL_FREE_API;
-  const deeplProApiUrl = DEEPL_PRO_API || DEFAULT_DEEPL_PRO_API;
-
-  let deeplApiUrl = deepFreeApiUrl;
-  let userPlan = 'free';
-  if (user && token) {
-    userPlan = getSubscriptionPlan(token);
-    if (userPlan === 'pro') deeplApiUrl = deeplProApiUrl;
-  }
-  const deeplAuthKey =
-    deeplApiUrl === deeplProApiUrl
-      ? getDeepLAPIKey(process.env['DEEPL_PRO_API_KEYS'])
-      : getDeepLAPIKey(process.env['DEEPL_FREE_API_KEYS']);
-
-  const {
-    text,
-    source_lang: sourceLang = 'AUTO',
-    target_lang: targetLang = 'EN',
-    use_cache: useCache = false,
-  }: { text: string[]; source_lang: string; target_lang: string; use_cache: boolean } = req.body;
-
-  try {
-    const translations = await Promise.all(
-      text.map(async (singleText) => {
-        if (!singleText?.trim()) {
-          return { text: '', daily_usage: 0 };
-        }
-        if (useCache && hasKVCache) {
-          try {
-            const cacheKey = generateCacheKey(singleText, sourceLang, targetLang);
-            const cachedTranslation = await env['TRANSLATIONS_KV']!.get(cacheKey);
-
-            if (cachedTranslation) {
-              return {
-                text: cachedTranslation,
-                daily_usage: 0,
-                detected_source_language: sourceLang,
-              };
-            }
-          } catch (cacheError) {
-            console.error('Cache retrieval error:', cacheError);
-          }
-        }
-
-        if (!user || !token) return res.status(401).json({ error: ErrorCodes.UNAUTHORIZED });
-        await checkDailyUsage(user?.id, token, singleText.length);
-
-        return await callDeepLAPI(
-          singleText,
-          sourceLang,
-          targetLang,
-          deeplApiUrl,
-          deeplAuthKey,
-          env['TRANSLATIONS_KV'],
-          useCache,
-        );
-      }),
-    );
-    const originalCharsCount = text.reduce((a, b) => a + b.length, 0);
-    const translatedCharsCount = translations.reduce((a, b) => a + (b?.text.length || 0), 0);
-    const newDailyUsage = await updateDailyUsage(
-      user?.id,
-      token,
-      originalCharsCount + translatedCharsCount,
-    );
-    translations.forEach((translation) => {
-      if (translation && translation.text) {
-        translation.daily_usage = newDailyUsage;
-      }
-    });
-    return res.status(200).json({ translations });
-  } catch (error) {
-    if (error instanceof Error && error.message.includes(ErrorCodes.DAILY_QUOTA_EXCEEDED)) {
-      return res.status(429).json({ error: ErrorCodes.DAILY_QUOTA_EXCEEDED });
-    } else {
-      console.error('Error proxying DeepL request:', error);
-    }
-    return res.status(500).json({ error: ErrorCodes.INTERNAL_SERVER_ERROR });
-  }
-};
-
+/** Call DeepL API for a single text */
 async function callDeepLAPI(
   text: string,
   sourceLang: string,
   targetLang: string,
   apiUrl: string,
   authKey: string,
-  translationsKV: KVNamespace | undefined,
-  useCache: boolean,
-) {
-  const isV2Api = apiUrl.endsWith('/v2/translate');
+): Promise<string> {
+  const LANG_V2_V1_MAP: Record<string, string> = {
+    'ZH-HANS': 'ZH',
+    'ZH-HANT': 'ZH-TW',
+  };
 
-  // TODO: this should be processed in the client, but for now, we need to do it here
-  // please remove this when most clients are updated
+  const isV2Api = apiUrl.endsWith('/v2/translate');
   const input = text.replaceAll('\n', '').trim();
 
   const requestBody: {
@@ -207,7 +131,6 @@ async function callDeepLAPI(
     method: 'POST',
     headers: {
       Authorization: `DeepL-Auth-Key ${authKey}`,
-      'x-fingerprint': process.env['DEEPL_X_FINGERPRINT'] || '',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(requestBody),
@@ -223,30 +146,128 @@ async function callDeepLAPI(
     data?: string;
   };
 
-  let translatedText = '';
-  let detectedSourceLanguage = '';
-
   if (data.translations && data.translations.length > 0) {
-    translatedText = data.translations[0]!.text;
-    detectedSourceLanguage = data.translations[0]!.detected_source_language || '';
+    return data.translations[0]!.text;
   } else if (data.data) {
-    translatedText = data.data;
+    return data.data;
   }
-
-  if (useCache && translationsKV && translatedText) {
-    try {
-      const cacheKey = generateCacheKey(text, sourceLang, targetLang);
-      await translationsKV.put(cacheKey, translatedText, { expirationTtl: 86400 * 90 });
-    } catch (cacheError) {
-      console.error('Cache storage error:', cacheError);
-    }
-  }
-
-  return {
-    text: translatedText,
-    daily_usage: 0,
-    detected_source_language: detectedSourceLanguage,
-  };
+  return '';
 }
+
+const getDeepLAPIKey = (keys: string | undefined) => {
+  const keyArray = keys?.split(',') ?? [];
+  return keyArray.length ? keyArray[Math.floor(Math.random() * keyArray.length)]! : '';
+};
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  await runMiddleware(req, res, corsAllMethods);
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Determine which translation backend to use
+  const useLibreTranslate = !!LIBRETRANSLATE_URL;
+  const hasDeepLKeys = !!(process.env['DEEPL_FREE_API_KEYS'] || process.env['DEEPL_PRO_API_KEYS']);
+
+  if (!useLibreTranslate && !hasDeepLKeys) {
+    return res.status(503).json({
+      error: 'No translation service configured. Set LIBRETRANSLATE_URL or DEEPL_FREE_API_KEYS/DEEPL_PRO_API_KEYS.',
+    });
+  }
+
+  // Validate user
+  const { user, token } = await validateUserAndToken(req.headers['authorization']);
+  if (!user || !token) {
+    return res.status(401).json({ error: ErrorCodes.UNAUTHORIZED });
+  }
+
+  const userId = (user as Record<string, unknown>).id as string;
+  let userPlan = 'free';
+  if (token) {
+    userPlan = getSubscriptionPlan(token);
+  }
+
+  const {
+    text,
+    source_lang: sourceLang = 'AUTO',
+    target_lang: targetLang = 'EN',
+    use_cache: useCache = false,
+  }: { text: string[]; source_lang: string; target_lang: string; use_cache: boolean } = req.body;
+
+  try {
+    // Check daily quota
+    const { quota: dailyQuota } = getDailyTranslationPlanData(token);
+    const totalChars = text.reduce((sum, t) => sum + (t?.length || 0), 0);
+    const currentUsage = getDailyUsage(userId);
+
+    if (dailyQuota > 0 && currentUsage + totalChars > dailyQuota) {
+      return res.status(429).json({ error: ErrorCodes.DAILY_QUOTA_EXCEEDED });
+    }
+
+    // Translate each text
+    const translations = await Promise.all(
+      text.map(async (singleText) => {
+        if (!singleText?.trim()) {
+          return { text: '', daily_usage: 0 };
+        }
+
+        // Check cache
+        if (useCache) {
+          const cacheKey = generateCacheKey(singleText, sourceLang, targetLang);
+          const cached = translationCache.get(cacheKey);
+          if (cached && cached.expires > Date.now()) {
+            return { text: cached.result, daily_usage: 0 };
+          }
+        }
+
+        let translatedText = '';
+
+        if (useLibreTranslate) {
+          translatedText = await callLibreTranslate(singleText, sourceLang, targetLang);
+        } else {
+          // Use DeepL
+          const deepFreeApiUrl = process.env['DEEPL_FREE_API'] || DEFAULT_DEEPL_FREE_API;
+          const deeplProApiUrl = process.env['DEEPL_PRO_API'] || DEFAULT_DEEPL_PRO_API;
+          let deeplApiUrl = deepFreeApiUrl;
+          if (userPlan === 'pro') deeplApiUrl = deeplProApiUrl;
+          const deeplAuthKey =
+            deeplApiUrl === deeplProApiUrl
+              ? getDeepLAPIKey(process.env['DEEPL_PRO_API_KEYS'])
+              : getDeepLAPIKey(process.env['DEEPL_FREE_API_KEYS']);
+          translatedText = await callDeepLAPI(singleText, sourceLang, targetLang, deeplApiUrl, deeplAuthKey);
+        }
+
+        // Store in cache
+        if (useCache) {
+          const cacheKey = generateCacheKey(singleText, sourceLang, targetLang);
+          translationCache.set(cacheKey, {
+            result: translatedText,
+            expires: Date.now() + 24 * 60 * 60 * 1000, // 24h TTL
+          });
+        }
+
+        return { text: translatedText, daily_usage: 0 };
+      }),
+    );
+
+    // Track usage
+    const translatedCharsCount = translations.reduce((a, b) => a + (b?.text.length || 0), 0);
+    const newDailyUsage = addDailyUsage(userId, totalChars + translatedCharsCount);
+    translations.forEach((translation) => {
+      if (translation) {
+        translation.daily_usage = newDailyUsage;
+      }
+    });
+
+    return res.status(200).json({ translations });
+  } catch (error) {
+    if (error instanceof Error && error.message.includes(ErrorCodes.DAILY_QUOTA_EXCEEDED)) {
+      return res.status(429).json({ error: ErrorCodes.DAILY_QUOTA_EXCEEDED });
+    }
+    console.error('Error proxying translation request:', error);
+    return res.status(500).json({ error: ErrorCodes.INTERNAL_SERVER_ERROR });
+  }
+};
 
 export default handler;

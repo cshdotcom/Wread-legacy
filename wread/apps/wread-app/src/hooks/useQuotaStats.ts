@@ -14,38 +14,30 @@ export const useQuotaStats = (briefName = false) => {
     if (!user || !token) return;
 
     const storagPlan = getStoragePlanData(token);
-    const storageIsUnlimited = storagPlan.quota === 0;
-    const inGB = !storageIsUnlimited && storagPlan.quota > 1e9;
+    const inGB = storagPlan.quota > 1e9;
     const storageQuota: QuotaType = {
       name: briefName ? _('Storage') : _('Cloud Sync Storage'),
-      tooltip: storageIsUnlimited
-        ? _('Unlimited Cloud Sync Space')
-        : _('{{percentage}}% of Cloud Sync Space Used.', {
-            percentage: Math.round((storagPlan.usage / storagPlan.quota) * 100),
-          }),
-      used: storageIsUnlimited
-        ? parseFloat((storagPlan.usage / 1024 / 1024 / 1024).toFixed(2))
-        : parseFloat((storagPlan.usage / 1024 / 1024 / (inGB ? 1024 : 1)).toFixed(2)),
-      total: storageIsUnlimited ? 0 : Math.round((storagPlan.quota / 1024 / 1024 / (inGB ? 1024 : 1)) * 10) / 10,
-      unit: storageIsUnlimited ? 'GB' : inGB ? 'GB' : 'MB',
+      tooltip: _('{{percentage}}% of Cloud Sync Space Used.', {
+        percentage: Math.round((storagPlan.usage / storagPlan.quota) * 100),
+      }),
+      used: parseFloat((storagPlan.usage / 1024 / 1024 / (inGB ? 1024 : 1)).toFixed(2)),
+      total: Math.round((storagPlan.quota / 1024 / 1024 / (inGB ? 1024 : 1)) * 10) / 10,
+      unit: inGB ? 'GB' : 'MB',
     };
     const translationPlan = getTranslationPlanData(token);
-    const translationIsUnlimited = translationPlan.quota === 0;
     const now = new Date();
-    const translationResetAt = !translationIsUnlimited
-      ? Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1)
-      : undefined;
+    const translationResetAt = Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate() + 1,
+    );
     const translationQuota: QuotaType = {
       name: briefName ? _('Translation') : _('Translation Characters'),
-      tooltip: translationIsUnlimited
-        ? _('Unlimited Daily Translation Characters')
-        : _('{{percentage}}% of Daily Translation Characters Used.', {
-            percentage: Math.round((translationPlan.usage / translationPlan.quota) * 100),
-          }),
-      used: translationIsUnlimited
-        ? Math.round(translationPlan.usage / 1024)
-        : Math.round(translationPlan.usage / 1024),
-      total: translationIsUnlimited ? 0 : Math.round(translationPlan.quota / 1024),
+      tooltip: _('{{percentage}}% of Daily Translation Characters Used.', {
+        percentage: Math.round((translationPlan.usage / translationPlan.quota) * 100),
+      }),
+      used: Math.round(translationPlan.usage / 1024),
+      total: Math.round(translationPlan.quota / 1024),
       unit: 'K',
       resetAt: translationResetAt,
     };

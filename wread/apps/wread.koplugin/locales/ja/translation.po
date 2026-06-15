@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "KOReader と WRead のデバイス間で同期を保ちます。"
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "KOReader と Readest のデバイス間で同期を保ちます。"
 
 msgid "Library view"
 msgstr "ライブラリ表示"
@@ -77,14 +77,14 @@ msgstr "ダウンロードフォルダ…"
 msgid "Pick a folder for downloaded books"
 msgstr "ダウンロードした書籍を保存するフォルダを選択"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "ライブラリを開くにはWReadにサインインしてください"
+msgid "Sign in to Readest to open the Library"
+msgstr "ライブラリを開くにはReadestにサインインしてください"
 
 msgid "Library"
 msgstr "ライブラリ"
 
-msgid "WRead Library"
-msgstr "WRead ライブラリ"
+msgid "Readest Library"
+msgstr "Readest ライブラリ"
 
 msgid "Cancel"
 msgstr "キャンセル"
@@ -107,8 +107,8 @@ msgstr "完全なライブラリ表示には Cover Browser プラグインが必
 msgid "File moved or deleted. Rescan library?"
 msgstr "ファイルが移動または削除されました。ライブラリを再スキャンしますか？"
 
-msgid "Download this book from WRead?"
-msgstr "この書籍を WRead からダウンロードしますか？"
+msgid "Download this book from Readest?"
+msgstr "この書籍を Readest からダウンロードしますか？"
 
 msgid "Download"
 msgstr "ダウンロード"
@@ -125,8 +125,8 @@ msgstr "クラウドのコピーは利用できません。"
 msgid "Download failed."
 msgstr "ダウンロードに失敗しました。"
 
-msgid "No cover available on WRead."
-msgstr "WReadに利用可能な表紙がありません。"
+msgid "No cover available on Readest."
+msgstr "Readestに利用可能な表紙がありません。"
 
 msgid "Cover download failed."
 msgstr "表紙のダウンロードに失敗しました。"
@@ -182,14 +182,14 @@ msgstr "表紙をダウンロード"
 msgid "Download All"
 msgstr "すべてダウンロード"
 
-msgid "Open WRead Library"
-msgstr "WRead ライブラリを開く"
+msgid "Open Readest Library"
+msgstr "Readest ライブラリを開く"
 
-msgid "Push WRead book library"
-msgstr "WRead 書籍ライブラリを送信"
+msgid "Push Readest book library"
+msgstr "Readest 書籍ライブラリを送信"
 
-msgid "Pull WRead book library"
-msgstr "WRead 書籍ライブラリを取得"
+msgid "Pull Readest book library"
+msgstr "Readest 書籍ライブラリを取得"
 
 msgid "Set auto progress sync"
 msgstr "進捗の自動同期を設定"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "オフ"
 
 msgid "Toggle auto readest sync"
-msgstr "WRead 自動同期を切り替え"
+msgstr "Readest 自動同期を切り替え"
 
 msgid "Push readest progress from this device"
-msgstr "このデバイスから WRead の進捗を送信"
+msgstr "このデバイスから Readest の進捗を送信"
 
 msgid "Pull readest progress from other devices"
-msgstr "他のデバイスから WRead の進捗を取得"
+msgstr "他のデバイスから Readest の進捗を取得"
 
 msgid "Push readest annotations from this device"
-msgstr "このデバイスから WRead の注釈を送信"
+msgstr "このデバイスから Readest の注釈を送信"
 
 msgid "Pull readest annotations from other devices"
-msgstr "他のデバイスから WRead の注釈を取得"
+msgstr "他のデバイスから Readest の注釈を取得"
 
-msgid "Add to WRead"
-msgstr "WRead に追加"
+msgid "Add to Readest"
+msgstr "Readest に追加"
 
-msgid "Sign in to WRead first."
-msgstr "先に WRead にサインインしてください。"
+msgid "Sign in to Readest first."
+msgstr "先に Readest にサインインしてください。"
 
 msgid "File not found."
 msgstr "ファイルが見つかりません。"
@@ -233,14 +233,14 @@ msgstr "書籍のハッシュを計算中…"
 msgid "Could not read file."
 msgstr "ファイルを読み取れませんでした。"
 
-msgid "Already in your WRead library:"
-msgstr "すでに WRead ライブラリにあります:"
+msgid "Already in your Readest library:"
+msgstr "すでに Readest ライブラリにあります:"
 
-msgid "Added to WRead:"
-msgstr "WRead に追加しました:"
+msgid "Added to Readest:"
+msgstr "Readest に追加しました:"
 
-msgid "Log in WRead Account"
-msgstr "WRead アカウントにログイン"
+msgid "Log in Readest Account"
+msgstr "Readest アカウントにログイン"
 
 msgid "Log out as %1"
 msgstr "%1 をログアウト"
@@ -248,8 +248,8 @@ msgstr "%1 をログアウト"
 msgid "Auto sync"
 msgstr "自動同期"
 
-msgid "WRead library"
-msgstr "WRead ライブラリ"
+msgid "Readest library"
+msgstr "Readest ライブラリ"
 
 msgid "Push books now"
 msgstr "今すぐ書籍を送信"
@@ -284,8 +284,8 @@ msgstr "更新を確認"
 msgid "Please login first"
 msgstr "先にログインしてください"
 
-msgid "Please configure WRead settings first"
-msgstr "先に WRead の設定を行ってください"
+msgid "Please configure Readest settings first"
+msgstr "先に Readest の設定を行ってください"
 
 msgid "No book is open"
 msgstr "書籍が開かれていません"
@@ -341,8 +341,8 @@ msgstr "更新をダウンロードしています…"
 msgid "Failed to download update. Please try again later."
 msgstr "更新のダウンロードに失敗しました。しばらくしてから再度お試しください。"
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "WRead プラグインを v%1 に更新しました。\n\nKOReader を再起動して更新を適用してください。"
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Readest プラグインを v%1 に更新しました。\n\nKOReader を再起動して更新を適用してください。"
 
 msgid "Restart now"
 msgstr "今すぐ再起動"
@@ -401,14 +401,14 @@ msgstr "先に Supabase の URL と API キーを設定してください"
 msgid "Logging in..."
 msgstr "ログイン中…"
 
-msgid "Successfully logged in to WRead"
-msgstr "WRead にログインしました"
+msgid "Successfully logged in to Readest"
+msgstr "Readest にログインしました"
 
 msgid "Login failed: %1"
 msgstr "ログインに失敗しました: %1"
 
-msgid "Logged out from WRead"
-msgstr "WRead からログアウトしました"
+msgid "Logged out from Readest"
+msgstr "Readest からログアウトしました"
 
 msgid "Cannot identify the current book"
 msgstr "現在の書籍を特定できません"

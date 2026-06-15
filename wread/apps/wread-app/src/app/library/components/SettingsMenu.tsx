@@ -385,13 +385,6 @@ const SettingsMenu: React.FC<SettingsMenuProps> = ({ onPullLibrary, setIsDropdow
           onClick={toggleOpenLastBooks}
         />
       )}
-      {appService?.hasUpdater && (
-        <MenuItem
-          label={_('Check Updates on Start')}
-          toggled={isAutoCheckUpdates}
-          onClick={toggleAutoCheckUpdates}
-        />
-      )}
       <hr aria-hidden='true' className='border-base-200 my-1' />
       {appService?.hasWindow && (
         <MenuItem
@@ -469,7 +462,6 @@ const SettingsMenu: React.FC<SettingsMenuProps> = ({ onPullLibrary, setIsDropdow
       {user && userProfilePlan === 'free' && (
         <MenuItem label={_('Upgrade to WRead Premium')} onClick={handleUpgrade} />
       )}
-      {isWebAppPlatform() && <MenuItem label={_('Download WRead')} onClick={downloadWRead} />}
       <MenuItem label={_('About WRead')} onClick={showAboutWRead} />
       <MenuItem
         label={_('Help improve WRead')}

@@ -73,9 +73,7 @@ const Quota: React.FC<QuotaProps> = ({ quotas, showProgress, className, labelCla
                   {quota.name}
                 </span>
                 <div className='text-right text-sm'>
-                  {quota.total === 0
-                    ? _(`{{used}} / Unlimited`, { used: quota.used })
-                    : `${quota.used} / ${quota.total} ${quota.unit}`}
+                  {quota.used} / {quota.total} {quota.unit}
                 </div>
               </div>
             </div>

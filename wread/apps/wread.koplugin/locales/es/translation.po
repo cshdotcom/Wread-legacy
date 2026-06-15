@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "Mantiene sincronizados tus dispositivos KOReader y WRead."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "Mantiene sincronizados tus dispositivos KOReader y Readest."
 
 msgid "Library view"
 msgstr "Vista de biblioteca"
@@ -77,14 +77,14 @@ msgstr "Carpeta de descargas…"
 msgid "Pick a folder for downloaded books"
 msgstr "Elige una carpeta para los libros descargados"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "Inicia sesión en WRead para abrir la biblioteca"
+msgid "Sign in to Readest to open the Library"
+msgstr "Inicia sesión en Readest para abrir la biblioteca"
 
 msgid "Library"
 msgstr "Biblioteca"
 
-msgid "WRead Library"
-msgstr "Biblioteca de WRead"
+msgid "Readest Library"
+msgstr "Biblioteca de Readest"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -107,8 +107,8 @@ msgstr "Se requiere el complemento Cover Browser para la representación complet
 msgid "File moved or deleted. Rescan library?"
 msgstr "Archivo movido o eliminado. ¿Reescanear la biblioteca?"
 
-msgid "Download this book from WRead?"
-msgstr "¿Descargar este libro de WRead?"
+msgid "Download this book from Readest?"
+msgstr "¿Descargar este libro de Readest?"
 
 msgid "Download"
 msgstr "Descargar"
@@ -125,8 +125,8 @@ msgstr "Copia en la nube no disponible."
 msgid "Download failed."
 msgstr "Descarga fallida."
 
-msgid "No cover available on WRead."
-msgstr "No hay portada disponible en WRead."
+msgid "No cover available on Readest."
+msgstr "No hay portada disponible en Readest."
 
 msgid "Cover download failed."
 msgstr "Falló la descarga de la portada."
@@ -182,14 +182,14 @@ msgstr "Descargar portada"
 msgid "Download All"
 msgstr "Descargar todo"
 
-msgid "Open WRead Library"
-msgstr "Abrir biblioteca de WRead"
+msgid "Open Readest Library"
+msgstr "Abrir biblioteca de Readest"
 
-msgid "Push WRead book library"
-msgstr "Enviar biblioteca de WRead"
+msgid "Push Readest book library"
+msgstr "Enviar biblioteca de Readest"
 
-msgid "Pull WRead book library"
-msgstr "Obtener biblioteca de WRead"
+msgid "Pull Readest book library"
+msgstr "Obtener biblioteca de Readest"
 
 msgid "Set auto progress sync"
 msgstr "Configurar sincronización automática del progreso"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "desactivado"
 
 msgid "Toggle auto readest sync"
-msgstr "Alternar sincronización automática de WRead"
+msgstr "Alternar sincronización automática de Readest"
 
 msgid "Push readest progress from this device"
-msgstr "Enviar progreso de WRead desde este dispositivo"
+msgstr "Enviar progreso de Readest desde este dispositivo"
 
 msgid "Pull readest progress from other devices"
-msgstr "Obtener progreso de WRead de otros dispositivos"
+msgstr "Obtener progreso de Readest de otros dispositivos"
 
 msgid "Push readest annotations from this device"
-msgstr "Enviar anotaciones de WRead desde este dispositivo"
+msgstr "Enviar anotaciones de Readest desde este dispositivo"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Obtener anotaciones de WRead de otros dispositivos"
+msgstr "Obtener anotaciones de Readest de otros dispositivos"
 
-msgid "Add to WRead"
-msgstr "Añadir a WRead"
+msgid "Add to Readest"
+msgstr "Añadir a Readest"
 
-msgid "Sign in to WRead first."
-msgstr "Inicia sesión en WRead primero."
+msgid "Sign in to Readest first."
+msgstr "Inicia sesión en Readest primero."
 
 msgid "File not found."
 msgstr "Archivo no encontrado."
@@ -233,14 +233,14 @@ msgstr "Calculando hash del libro…"
 msgid "Could not read file."
 msgstr "No se pudo leer el archivo."
 
-msgid "Already in your WRead library:"
-msgstr "Ya está en tu biblioteca de WRead:"
+msgid "Already in your Readest library:"
+msgstr "Ya está en tu biblioteca de Readest:"
 
-msgid "Added to WRead:"
-msgstr "Añadido a WRead:"
+msgid "Added to Readest:"
+msgstr "Añadido a Readest:"
 
-msgid "Log in WRead Account"
-msgstr "Iniciar sesión en la cuenta WRead"
+msgid "Log in Readest Account"
+msgstr "Iniciar sesión en la cuenta Readest"
 
 msgid "Log out as %1"
 msgstr "Cerrar sesión de %1"
@@ -248,8 +248,8 @@ msgstr "Cerrar sesión de %1"
 msgid "Auto sync"
 msgstr "Sincronización automática"
 
-msgid "WRead library"
-msgstr "Biblioteca de WRead"
+msgid "Readest library"
+msgstr "Biblioteca de Readest"
 
 msgid "Push books now"
 msgstr "Enviar libros ahora"
@@ -284,8 +284,8 @@ msgstr "Buscar actualización"
 msgid "Please login first"
 msgstr "Por favor inicia sesión primero"
 
-msgid "Please configure WRead settings first"
-msgstr "Configura primero los ajustes de WRead"
+msgid "Please configure Readest settings first"
+msgstr "Configura primero los ajustes de Readest"
 
 msgid "No book is open"
 msgstr "Ningún libro abierto"
@@ -341,8 +341,8 @@ msgstr "Descargando actualización…"
 msgid "Failed to download update. Please try again later."
 msgstr "Error al descargar la actualización. Inténtalo de nuevo más tarde."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Plugin WRead actualizado a v%1.\n\nReinicia KOReader para aplicar la actualización."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Plugin Readest actualizado a v%1.\n\nReinicia KOReader para aplicar la actualización."
 
 msgid "Restart now"
 msgstr "Reiniciar ahora"
@@ -401,14 +401,14 @@ msgstr "Configura primero la URL de Supabase y la clave API"
 msgid "Logging in..."
 msgstr "Iniciando sesión…"
 
-msgid "Successfully logged in to WRead"
-msgstr "Sesión iniciada en WRead correctamente"
+msgid "Successfully logged in to Readest"
+msgstr "Sesión iniciada en Readest correctamente"
 
 msgid "Login failed: %1"
 msgstr "Error al iniciar sesión: %1"
 
-msgid "Logged out from WRead"
-msgstr "Sesión cerrada de WRead"
+msgid "Logged out from Readest"
+msgstr "Sesión cerrada de Readest"
 
 msgid "Cannot identify the current book"
 msgstr "No se puede identificar el libro actual"

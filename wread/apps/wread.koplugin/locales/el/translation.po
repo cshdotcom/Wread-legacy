@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Greek\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "Διατηρεί τις συσκευές KOReader και WRead συγχρονισμένες."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "Διατηρεί τις συσκευές KOReader και Readest συγχρονισμένες."
 
 msgid "Library view"
 msgstr "Προβολή βιβλιοθήκης"
@@ -77,14 +77,14 @@ msgstr "Φάκελος λήψης…"
 msgid "Pick a folder for downloaded books"
 msgstr "Επιλέξτε φάκελο για τα ληφθέντα βιβλία"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "Συνδεθείτε στο WRead για να ανοίξετε τη βιβλιοθήκη"
+msgid "Sign in to Readest to open the Library"
+msgstr "Συνδεθείτε στο Readest για να ανοίξετε τη βιβλιοθήκη"
 
 msgid "Library"
 msgstr "Βιβλιοθήκη"
 
-msgid "WRead Library"
-msgstr "Βιβλιοθήκη WRead"
+msgid "Readest Library"
+msgstr "Βιβλιοθήκη Readest"
 
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -107,8 +107,8 @@ msgstr "Το πρόσθετο Cover Browser απαιτείται για πλήρ
 msgid "File moved or deleted. Rescan library?"
 msgstr "Το αρχείο μετακινήθηκε ή διαγράφηκε. Επανασάρωση βιβλιοθήκης;"
 
-msgid "Download this book from WRead?"
-msgstr "Λήψη αυτού του βιβλίου από το WRead;"
+msgid "Download this book from Readest?"
+msgstr "Λήψη αυτού του βιβλίου από το Readest;"
 
 msgid "Download"
 msgstr "Λήψη"
@@ -125,8 +125,8 @@ msgstr "Το αντίγραφο στο cloud δεν είναι διαθέσιμ�
 msgid "Download failed."
 msgstr "Η λήψη απέτυχε."
 
-msgid "No cover available on WRead."
-msgstr "Δεν υπάρχει εξώφυλλο διαθέσιμο στο WRead."
+msgid "No cover available on Readest."
+msgstr "Δεν υπάρχει εξώφυλλο διαθέσιμο στο Readest."
 
 msgid "Cover download failed."
 msgstr "Αποτυχία λήψης εξωφύλλου."
@@ -182,14 +182,14 @@ msgstr "Λήψη εξωφύλλου"
 msgid "Download All"
 msgstr "Λήψη όλων"
 
-msgid "Open WRead Library"
-msgstr "Άνοιγμα βιβλιοθήκης WRead"
+msgid "Open Readest Library"
+msgstr "Άνοιγμα βιβλιοθήκης Readest"
 
-msgid "Push WRead book library"
-msgstr "Αποστολή βιβλιοθήκης WRead"
+msgid "Push Readest book library"
+msgstr "Αποστολή βιβλιοθήκης Readest"
 
-msgid "Pull WRead book library"
-msgstr "Λήψη βιβλιοθήκης WRead"
+msgid "Pull Readest book library"
+msgstr "Λήψη βιβλιοθήκης Readest"
 
 msgid "Set auto progress sync"
 msgstr "Ορισμός αυτόματου συγχρονισμού προόδου"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "όχι"
 
 msgid "Toggle auto readest sync"
-msgstr "Εναλλαγή αυτόματου συγχρονισμού WRead"
+msgstr "Εναλλαγή αυτόματου συγχρονισμού Readest"
 
 msgid "Push readest progress from this device"
-msgstr "Αποστολή προόδου WRead από αυτή τη συσκευή"
+msgstr "Αποστολή προόδου Readest από αυτή τη συσκευή"
 
 msgid "Pull readest progress from other devices"
-msgstr "Λήψη προόδου WRead από άλλες συσκευές"
+msgstr "Λήψη προόδου Readest από άλλες συσκευές"
 
 msgid "Push readest annotations from this device"
-msgstr "Αποστολή σχολίων WRead από αυτή τη συσκευή"
+msgstr "Αποστολή σχολίων Readest από αυτή τη συσκευή"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Λήψη σχολίων WRead από άλλες συσκευές"
+msgstr "Λήψη σχολίων Readest από άλλες συσκευές"
 
-msgid "Add to WRead"
-msgstr "Προσθήκη στο WRead"
+msgid "Add to Readest"
+msgstr "Προσθήκη στο Readest"
 
-msgid "Sign in to WRead first."
-msgstr "Συνδεθείτε πρώτα στο WRead."
+msgid "Sign in to Readest first."
+msgstr "Συνδεθείτε πρώτα στο Readest."
 
 msgid "File not found."
 msgstr "Το αρχείο δεν βρέθηκε."
@@ -233,14 +233,14 @@ msgstr "Υπολογισμός hash βιβλίου…"
 msgid "Could not read file."
 msgstr "Δεν ήταν δυνατή η ανάγνωση του αρχείου."
 
-msgid "Already in your WRead library:"
-msgstr "Ήδη στη βιβλιοθήκη σας WRead:"
+msgid "Already in your Readest library:"
+msgstr "Ήδη στη βιβλιοθήκη σας Readest:"
 
-msgid "Added to WRead:"
-msgstr "Προστέθηκε στο WRead:"
+msgid "Added to Readest:"
+msgstr "Προστέθηκε στο Readest:"
 
-msgid "Log in WRead Account"
-msgstr "Σύνδεση στον λογαριασμό WRead"
+msgid "Log in Readest Account"
+msgstr "Σύνδεση στον λογαριασμό Readest"
 
 msgid "Log out as %1"
 msgstr "Αποσύνδεση ως %1"
@@ -248,8 +248,8 @@ msgstr "Αποσύνδεση ως %1"
 msgid "Auto sync"
 msgstr "Αυτόματος συγχρονισμός"
 
-msgid "WRead library"
-msgstr "Βιβλιοθήκη WRead"
+msgid "Readest library"
+msgstr "Βιβλιοθήκη Readest"
 
 msgid "Push books now"
 msgstr "Αποστολή βιβλίων τώρα"
@@ -284,8 +284,8 @@ msgstr "Έλεγχος για ενημέρωση"
 msgid "Please login first"
 msgstr "Συνδεθείτε πρώτα"
 
-msgid "Please configure WRead settings first"
-msgstr "Διαμορφώστε πρώτα τις ρυθμίσεις WRead"
+msgid "Please configure Readest settings first"
+msgstr "Διαμορφώστε πρώτα τις ρυθμίσεις Readest"
 
 msgid "No book is open"
 msgstr "Δεν υπάρχει ανοιχτό βιβλίο"
@@ -341,8 +341,8 @@ msgstr "Λήψη ενημέρωσης…"
 msgid "Failed to download update. Please try again later."
 msgstr "Η λήψη της ενημέρωσης απέτυχε. Δοκιμάστε ξανά αργότερα."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Το πρόσθετο WRead ενημερώθηκε στην v%1.\n\nΕπανεκκινήστε το KOReader για να εφαρμοστεί η ενημέρωση."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Το πρόσθετο Readest ενημερώθηκε στην v%1.\n\nΕπανεκκινήστε το KOReader για να εφαρμοστεί η ενημέρωση."
 
 msgid "Restart now"
 msgstr "Επανεκκίνηση τώρα"
@@ -401,14 +401,14 @@ msgstr "Διαμορφώστε πρώτα το URL Supabase και το κλει
 msgid "Logging in..."
 msgstr "Σύνδεση…"
 
-msgid "Successfully logged in to WRead"
-msgstr "Συνδεθήκατε στο WRead"
+msgid "Successfully logged in to Readest"
+msgstr "Συνδεθήκατε στο Readest"
 
 msgid "Login failed: %1"
 msgstr "Η σύνδεση απέτυχε: %1"
 
-msgid "Logged out from WRead"
-msgstr "Αποσυνδεθήκατε από το WRead"
+msgid "Logged out from Readest"
+msgstr "Αποσυνδεθήκατε από το Readest"
 
 msgid "Cannot identify the current book"
 msgstr "Αδυναμία αναγνώρισης του τρέχοντος βιβλίου"

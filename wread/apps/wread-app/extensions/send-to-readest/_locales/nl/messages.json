@@ -1,14 +1,14 @@
 {
   "app_name": {
-    "message": "Naar WRead sturen",
+    "message": "Naar Readest sturen",
     "description": "Extension name shown in the browser toolbar and the Chrome Web Store listing."
   },
   "app_description": {
-    "message": "Sla webpagina’s op in je WRead-bibliotheek",
+    "message": "Sla webpagina’s op in je Readest-bibliotheek",
     "description": "Short description shown in the Chrome Web Store listing."
   },
   "action_title": {
-    "message": "Naar WRead sturen",
+    "message": "Naar Readest sturen",
     "description": "Tooltip on the toolbar action button."
   }
 }

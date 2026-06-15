@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "Håller dina KOReader- och WRead-enheter synkroniserade."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "Håller dina KOReader- och Readest-enheter synkroniserade."
 
 msgid "Library view"
 msgstr "Biblioteksvy"
@@ -77,14 +77,14 @@ msgstr "Nedladdningsmapp …"
 msgid "Pick a folder for downloaded books"
 msgstr "Välj en mapp för nedladdade böcker"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "Logga in på WRead för att öppna biblioteket"
+msgid "Sign in to Readest to open the Library"
+msgstr "Logga in på Readest för att öppna biblioteket"
 
 msgid "Library"
 msgstr "Bibliotek"
 
-msgid "WRead Library"
-msgstr "WRead-bibliotek"
+msgid "Readest Library"
+msgstr "Readest-bibliotek"
 
 msgid "Cancel"
 msgstr "Avbryt"
@@ -107,8 +107,8 @@ msgstr "Cover Browser-tillägget krävs för full biblioteksrendering. Återgår
 msgid "File moved or deleted. Rescan library?"
 msgstr "Filen flyttad eller borttagen. Skanna biblioteket igen?"
 
-msgid "Download this book from WRead?"
-msgstr "Ladda ned den här boken från WRead?"
+msgid "Download this book from Readest?"
+msgstr "Ladda ned den här boken från Readest?"
 
 msgid "Download"
 msgstr "Ladda ned"
@@ -125,8 +125,8 @@ msgstr "Molnkopia är inte tillgänglig."
 msgid "Download failed."
 msgstr "Nedladdning misslyckades."
 
-msgid "No cover available on WRead."
-msgstr "Inget omslag tillgängligt på WRead."
+msgid "No cover available on Readest."
+msgstr "Inget omslag tillgängligt på Readest."
 
 msgid "Cover download failed."
 msgstr "Nedladdning av omslag misslyckades."
@@ -182,14 +182,14 @@ msgstr "Ladda ned omslag"
 msgid "Download All"
 msgstr "Ladda ned alla"
 
-msgid "Open WRead Library"
-msgstr "Öppna WRead-bibliotek"
+msgid "Open Readest Library"
+msgstr "Öppna Readest-bibliotek"
 
-msgid "Push WRead book library"
-msgstr "Skicka WRead-bibliotek"
+msgid "Push Readest book library"
+msgstr "Skicka Readest-bibliotek"
 
-msgid "Pull WRead book library"
-msgstr "Hämta WRead-bibliotek"
+msgid "Pull Readest book library"
+msgstr "Hämta Readest-bibliotek"
 
 msgid "Set auto progress sync"
 msgstr "Ställ in automatisk synkronisering av läsförloppet"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "av"
 
 msgid "Toggle auto readest sync"
-msgstr "Växla automatisk WRead-synkronisering"
+msgstr "Växla automatisk Readest-synkronisering"
 
 msgid "Push readest progress from this device"
-msgstr "Skicka WRead-läsförlopp från den här enheten"
+msgstr "Skicka Readest-läsförlopp från den här enheten"
 
 msgid "Pull readest progress from other devices"
-msgstr "Hämta WRead-läsförlopp från andra enheter"
+msgstr "Hämta Readest-läsförlopp från andra enheter"
 
 msgid "Push readest annotations from this device"
-msgstr "Skicka WRead-anteckningar från den här enheten"
+msgstr "Skicka Readest-anteckningar från den här enheten"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Hämta WRead-anteckningar från andra enheter"
+msgstr "Hämta Readest-anteckningar från andra enheter"
 
-msgid "Add to WRead"
-msgstr "Lägg till i WRead"
+msgid "Add to Readest"
+msgstr "Lägg till i Readest"
 
-msgid "Sign in to WRead first."
-msgstr "Logga in på WRead först."
+msgid "Sign in to Readest first."
+msgstr "Logga in på Readest först."
 
 msgid "File not found."
 msgstr "Filen hittades inte."
@@ -233,14 +233,14 @@ msgstr "Hashar bok …"
 msgid "Could not read file."
 msgstr "Kunde inte läsa filen."
 
-msgid "Already in your WRead library:"
-msgstr "Redan i ditt WRead-bibliotek:"
+msgid "Already in your Readest library:"
+msgstr "Redan i ditt Readest-bibliotek:"
 
-msgid "Added to WRead:"
-msgstr "Tillagd i WRead:"
+msgid "Added to Readest:"
+msgstr "Tillagd i Readest:"
 
-msgid "Log in WRead Account"
-msgstr "Logga in på WRead-konto"
+msgid "Log in Readest Account"
+msgstr "Logga in på Readest-konto"
 
 msgid "Log out as %1"
 msgstr "Logga ut från %1"
@@ -248,8 +248,8 @@ msgstr "Logga ut från %1"
 msgid "Auto sync"
 msgstr "Automatisk synkronisering"
 
-msgid "WRead library"
-msgstr "WRead-bibliotek"
+msgid "Readest library"
+msgstr "Readest-bibliotek"
 
 msgid "Push books now"
 msgstr "Skicka böcker nu"
@@ -284,8 +284,8 @@ msgstr "Sök efter uppdatering"
 msgid "Please login first"
 msgstr "Logga in först"
 
-msgid "Please configure WRead settings first"
-msgstr "Konfigurera WRead-inställningarna först"
+msgid "Please configure Readest settings first"
+msgstr "Konfigurera Readest-inställningarna först"
 
 msgid "No book is open"
 msgstr "Ingen bok är öppen"
@@ -341,8 +341,8 @@ msgstr "Hämtar uppdatering…"
 msgid "Failed to download update. Please try again later."
 msgstr "Det gick inte att hämta uppdateringen. Försök igen senare."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "WRead-tillägget uppdaterat till v%1.\n\nStarta om KOReader för att tillämpa uppdateringen."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Readest-tillägget uppdaterat till v%1.\n\nStarta om KOReader för att tillämpa uppdateringen."
 
 msgid "Restart now"
 msgstr "Starta om nu"
@@ -401,14 +401,14 @@ msgstr "Konfigurera Supabase-URL och API-nyckel först"
 msgid "Logging in..."
 msgstr "Loggar in…"
 
-msgid "Successfully logged in to WRead"
-msgstr "Inloggad på WRead"
+msgid "Successfully logged in to Readest"
+msgstr "Inloggad på Readest"
 
 msgid "Login failed: %1"
 msgstr "Inloggning misslyckades: %1"
 
-msgid "Logged out from WRead"
-msgstr "Utloggad från WRead"
+msgid "Logged out from Readest"
+msgstr "Utloggad från Readest"
 
 msgid "Cannot identify the current book"
 msgstr "Det går inte att identifiera den aktuella boken"

@@ -49,8 +49,10 @@ export const getStoragePlanData = (token: string) => {
   const purchasedQuota = data['storage_purchased_bytes'] || 0;
   const runtimeConfig = getRuntimeConfig();
   const fixedQuota =
-    runtimeConfig?.storageFixedQuota ?? parseInt(process.env['STORAGE_FIXED_QUOTA'] ?? '0');
-  const planQuota = fixedQuota || DEFAULT_STORAGE_QUOTA[plan] || DEFAULT_STORAGE_QUOTA['free'];
+    runtimeConfig?.storageFixedQuota ?? parseInt(process.env['STORAGE_FIXED_QUOTA'] ?? process.env['NEXT_PUBLIC_STORAGE_FIXED_QUOTA'] ?? '0');
+  // For self-hosted: fixedQuota from env takes precedence. If not set, use default plan quotas.
+  // If fixedQuota is 0 and plan is pro/plus, still use the default quota as fallback.
+  const planQuota = fixedQuota > 0 ? fixedQuota : (DEFAULT_STORAGE_QUOTA[plan] || DEFAULT_STORAGE_QUOTA['free']);
   const quota = planQuota + purchasedQuota;
 
   return {
@@ -63,9 +65,9 @@ export const getStoragePlanData = (token: string) => {
 export const getTranslationQuota = (plan: UserPlan): number => {
   const runtimeConfig = getRuntimeConfig();
   const fixedQuota =
-    runtimeConfig?.translationFixedQuota ?? parseInt(process.env['TRANSLATION_FIXED_QUOTA'] ?? '0');
+    runtimeConfig?.translationFixedQuota ?? parseInt(process.env['TRANSLATION_FIXED_QUOTA'] ?? process.env['NEXT_PUBLIC_TRANSLATION_FIXED_QUOTA'] ?? '0');
   return (
-    fixedQuota || DEFAULT_DAILY_TRANSLATION_QUOTA[plan] || DEFAULT_DAILY_TRANSLATION_QUOTA['free']
+    fixedQuota > 0 ? fixedQuota : (DEFAULT_DAILY_TRANSLATION_QUOTA[plan] || DEFAULT_DAILY_TRANSLATION_QUOTA['free'])
   );
 };
 

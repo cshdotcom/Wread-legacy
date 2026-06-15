@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: WRead contributors\n"
+"Last-Translator: Readest contributors\n"
 "Language-Team: Tamil\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "WRead"
-msgstr "WRead"
+msgid "Readest"
+msgstr "Readest"
 
-msgid "Keeps your KOReader and WRead devices in sync."
-msgstr "உங்கள் KOReader மற்றும் WRead சாதனங்களை ஒத்திசைவில் வைத்திருக்கிறது."
+msgid "Keeps your KOReader and Readest devices in sync."
+msgstr "உங்கள் KOReader மற்றும் Readest சாதனங்களை ஒத்திசைவில் வைத்திருக்கிறது."
 
 msgid "Library view"
 msgstr "நூலக காட்சி"
@@ -77,14 +77,14 @@ msgstr "பதிவிறக்க கோப்புறை…"
 msgid "Pick a folder for downloaded books"
 msgstr "பதிவிறக்கிய புத்தகங்களுக்கு கோப்புறை தேர்ந்தெடுக்கவும்"
 
-msgid "Sign in to WRead to open the Library"
-msgstr "நூலகத்தைத் திறக்க WRead-இல் உள்நுழையவும்"
+msgid "Sign in to Readest to open the Library"
+msgstr "நூலகத்தைத் திறக்க Readest-இல் உள்நுழையவும்"
 
 msgid "Library"
 msgstr "நூலகம்"
 
-msgid "WRead Library"
-msgstr "WRead நூலகம்"
+msgid "Readest Library"
+msgstr "Readest நூலகம்"
 
 msgid "Cancel"
 msgstr "ரத்து செய்யவும்"
@@ -107,8 +107,8 @@ msgstr "முழு நூலக காட்சிக்கு Cover Browser �
 msgid "File moved or deleted. Rescan library?"
 msgstr "கோப்பு நகர்த்தப்பட்டது அல்லது நீக்கப்பட்டது. நூலகத்தை மீண்டும் ஸ்கேன் செய்யவா?"
 
-msgid "Download this book from WRead?"
-msgstr "இந்த புத்தகத்தை WRead-இலிருந்து பதிவிறக்கவா?"
+msgid "Download this book from Readest?"
+msgstr "இந்த புத்தகத்தை Readest-இலிருந்து பதிவிறக்கவா?"
 
 msgid "Download"
 msgstr "பதிவிறக்கு"
@@ -125,8 +125,8 @@ msgstr "கிளவுட் நகல் கிடைக்கவில்ல�
 msgid "Download failed."
 msgstr "பதிவிறக்கம் தோல்வியடைந்தது."
 
-msgid "No cover available on WRead."
-msgstr "WRead-இல் அட்டை கிடைக்கவில்லை."
+msgid "No cover available on Readest."
+msgstr "Readest-இல் அட்டை கிடைக்கவில்லை."
 
 msgid "Cover download failed."
 msgstr "அட்டை பதிவிறக்கம் தோல்வியடைந்தது."
@@ -182,14 +182,14 @@ msgstr "அட்டை பதிவிறக்கு"
 msgid "Download All"
 msgstr "அனைத்தையும் பதிவிறக்கு"
 
-msgid "Open WRead Library"
-msgstr "WRead நூலகத்தைத் திற"
+msgid "Open Readest Library"
+msgstr "Readest நூலகத்தைத் திற"
 
-msgid "Push WRead book library"
-msgstr "WRead புத்தக நூலகத்தை அனுப்பு"
+msgid "Push Readest book library"
+msgstr "Readest புத்தக நூலகத்தை அனுப்பு"
 
-msgid "Pull WRead book library"
-msgstr "WRead புத்தக நூலகத்தை இழு"
+msgid "Pull Readest book library"
+msgstr "Readest புத்தக நூலகத்தை இழு"
 
 msgid "Set auto progress sync"
 msgstr "தானியங்கி முன்னேற்ற ஒத்திசைவை அமைக்கவும்"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "முடக்கு"
 
 msgid "Toggle auto readest sync"
-msgstr "தானியங்கி WRead ஒத்திசைவை மாற்றவும்"
+msgstr "தானியங்கி Readest ஒத்திசைவை மாற்றவும்"
 
 msgid "Push readest progress from this device"
-msgstr "இந்தச் சாதனத்திலிருந்து WRead முன்னேற்றத்தை அனுப்பு"
+msgstr "இந்தச் சாதனத்திலிருந்து Readest முன்னேற்றத்தை அனுப்பு"
 
 msgid "Pull readest progress from other devices"
-msgstr "மற்ற சாதனங்களிலிருந்து WRead முன்னேற்றத்தைப் பெறு"
+msgstr "மற்ற சாதனங்களிலிருந்து Readest முன்னேற்றத்தைப் பெறு"
 
 msgid "Push readest annotations from this device"
-msgstr "இந்தச் சாதனத்திலிருந்து WRead குறிப்புகளை அனுப்பு"
+msgstr "இந்தச் சாதனத்திலிருந்து Readest குறிப்புகளை அனுப்பு"
 
 msgid "Pull readest annotations from other devices"
-msgstr "மற்ற சாதனங்களிலிருந்து WRead குறிப்புகளைப் பெறு"
+msgstr "மற்ற சாதனங்களிலிருந்து Readest குறிப்புகளைப் பெறு"
 
-msgid "Add to WRead"
-msgstr "WRead-இல் சேர்"
+msgid "Add to Readest"
+msgstr "Readest-இல் சேர்"
 
-msgid "Sign in to WRead first."
-msgstr "முதலில் WRead-இல் உள்நுழையவும்."
+msgid "Sign in to Readest first."
+msgstr "முதலில் Readest-இல் உள்நுழையவும்."
 
 msgid "File not found."
 msgstr "கோப்பு கிடைக்கவில்லை."
@@ -233,14 +233,14 @@ msgstr "புத்தகத்தின் ஹாஷ் கணக்கிட�
 msgid "Could not read file."
 msgstr "கோப்பை வாசிக்க முடியவில்லை."
 
-msgid "Already in your WRead library:"
-msgstr "உங்கள் WRead நூலகத்தில் ஏற்கனவே உள்ளது:"
+msgid "Already in your Readest library:"
+msgstr "உங்கள் Readest நூலகத்தில் ஏற்கனவே உள்ளது:"
 
-msgid "Added to WRead:"
-msgstr "WRead-இல் சேர்க்கப்பட்டது:"
+msgid "Added to Readest:"
+msgstr "Readest-இல் சேர்க்கப்பட்டது:"
 
-msgid "Log in WRead Account"
-msgstr "WRead கணக்கில் உள்நுழைக"
+msgid "Log in Readest Account"
+msgstr "Readest கணக்கில் உள்நுழைக"
 
 msgid "Log out as %1"
 msgstr "%1 ஆக வெளியேறு"
@@ -248,8 +248,8 @@ msgstr "%1 ஆக வெளியேறு"
 msgid "Auto sync"
 msgstr "தானியங்கி ஒத்திசைவு"
 
-msgid "WRead library"
-msgstr "WRead நூலகம்"
+msgid "Readest library"
+msgstr "Readest நூலகம்"
 
 msgid "Push books now"
 msgstr "இப்போது புத்தகங்களை அனுப்பு"
@@ -284,8 +284,8 @@ msgstr "புதுப்பிப்பைச் சரிபார்"
 msgid "Please login first"
 msgstr "முதலில் உள்நுழைக"
 
-msgid "Please configure WRead settings first"
-msgstr "முதலில் WRead அமைப்புகளை உள்ளமைக்கவும்"
+msgid "Please configure Readest settings first"
+msgstr "முதலில் Readest அமைப்புகளை உள்ளமைக்கவும்"
 
 msgid "No book is open"
 msgstr "எந்த நூலும் திறக்கப்படவில்லை"
@@ -341,8 +341,8 @@ msgstr "புதுப்பிப்பைப் பதிவிறக்க�
 msgid "Failed to download update. Please try again later."
 msgstr "புதுப்பிப்பைப் பதிவிறக்குவதில் தோல்வி. பின்னர் முயற்சிக்கவும்."
 
-msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "WRead செருகுநிரல் v%1 ஆக புதுப்பிக்கப்பட்டது.\n\nபுதுப்பிப்பை செயல்படுத்த KOReader ஐ மீண்டும் தொடங்கவும்."
+msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Readest செருகுநிரல் v%1 ஆக புதுப்பிக்கப்பட்டது.\n\nபுதுப்பிப்பை செயல்படுத்த KOReader ஐ மீண்டும் தொடங்கவும்."
 
 msgid "Restart now"
 msgstr "இப்போது மீண்டும் தொடங்கு"
@@ -401,14 +401,14 @@ msgstr "முதலில் Supabase URL மற்றும் API விச�
 msgid "Logging in..."
 msgstr "உள்நுழைகிறது…"
 
-msgid "Successfully logged in to WRead"
-msgstr "WRead இல் வெற்றிகரமாக உள்நுழைந்தீர்கள்"
+msgid "Successfully logged in to Readest"
+msgstr "Readest இல் வெற்றிகரமாக உள்நுழைந்தீர்கள்"
 
 msgid "Login failed: %1"
 msgstr "உள்நுழைவில் தோல்வி: %1"
 
-msgid "Logged out from WRead"
-msgstr "WRead இலிருந்து வெளியேறினீர்கள்"
+msgid "Logged out from Readest"
+msgstr "Readest இலிருந்து வெளியேறினீர்கள்"
 
 msgid "Cannot identify the current book"
 msgstr "தற்போதைய நூலை அடையாளம் காண முடியவில்லை"
