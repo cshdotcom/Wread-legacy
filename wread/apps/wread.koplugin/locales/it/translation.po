@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: Readest contributors\n"
+"Last-Translator: WRead contributors\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Readest"
-msgstr "Readest"
+msgid "WRead"
+msgstr "WRead"
 
-msgid "Keeps your KOReader and Readest devices in sync."
-msgstr "Mantiene sincronizzati i tuoi dispositivi KOReader e Readest."
+msgid "Keeps your KOReader and WRead devices in sync."
+msgstr "Mantiene sincronizzati i tuoi dispositivi KOReader e WRead."
 
 msgid "Library view"
 msgstr "Vista libreria"
@@ -77,14 +77,14 @@ msgstr "Cartella download…"
 msgid "Pick a folder for downloaded books"
 msgstr "Scegli una cartella per i libri scaricati"
 
-msgid "Sign in to Readest to open the Library"
-msgstr "Accedi a Readest per aprire la libreria"
+msgid "Sign in to WRead to open the Library"
+msgstr "Accedi a WRead per aprire la libreria"
 
 msgid "Library"
 msgstr "Libreria"
 
-msgid "Readest Library"
-msgstr "Libreria Readest"
+msgid "WRead Library"
+msgstr "Libreria WRead"
 
 msgid "Cancel"
 msgstr "Annulla"
@@ -107,8 +107,8 @@ msgstr "È richiesto il plugin Cover Browser per la visualizzazione completa del
 msgid "File moved or deleted. Rescan library?"
 msgstr "File spostato o eliminato. Riscansionare la libreria?"
 
-msgid "Download this book from Readest?"
-msgstr "Scaricare questo libro da Readest?"
+msgid "Download this book from WRead?"
+msgstr "Scaricare questo libro da WRead?"
 
 msgid "Download"
 msgstr "Scarica"
@@ -125,8 +125,8 @@ msgstr "Copia su cloud non disponibile."
 msgid "Download failed."
 msgstr "Download non riuscito."
 
-msgid "No cover available on Readest."
-msgstr "Nessuna copertina disponibile su Readest."
+msgid "No cover available on WRead."
+msgstr "Nessuna copertina disponibile su WRead."
 
 msgid "Cover download failed."
 msgstr "Download della copertina non riuscito."
@@ -182,14 +182,14 @@ msgstr "Scarica copertina"
 msgid "Download All"
 msgstr "Scarica tutto"
 
-msgid "Open Readest Library"
-msgstr "Apri libreria Readest"
+msgid "Open WRead Library"
+msgstr "Apri libreria WRead"
 
-msgid "Push Readest book library"
-msgstr "Invia libreria Readest"
+msgid "Push WRead book library"
+msgstr "Invia libreria WRead"
 
-msgid "Pull Readest book library"
-msgstr "Recupera libreria Readest"
+msgid "Pull WRead book library"
+msgstr "Recupera libreria WRead"
 
 msgid "Set auto progress sync"
 msgstr "Imposta sincronizzazione automatica del progresso"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "disattivo"
 
 msgid "Toggle auto readest sync"
-msgstr "Attiva/disattiva sincronizzazione automatica Readest"
+msgstr "Attiva/disattiva sincronizzazione automatica WRead"
 
 msgid "Push readest progress from this device"
-msgstr "Invia progresso Readest da questo dispositivo"
+msgstr "Invia progresso WRead da questo dispositivo"
 
 msgid "Pull readest progress from other devices"
-msgstr "Ricevi progresso Readest dagli altri dispositivi"
+msgstr "Ricevi progresso WRead dagli altri dispositivi"
 
 msgid "Push readest annotations from this device"
-msgstr "Invia annotazioni Readest da questo dispositivo"
+msgstr "Invia annotazioni WRead da questo dispositivo"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Ricevi annotazioni Readest dagli altri dispositivi"
+msgstr "Ricevi annotazioni WRead dagli altri dispositivi"
 
-msgid "Add to Readest"
-msgstr "Aggiungi a Readest"
+msgid "Add to WRead"
+msgstr "Aggiungi a WRead"
 
-msgid "Sign in to Readest first."
-msgstr "Accedi prima a Readest."
+msgid "Sign in to WRead first."
+msgstr "Accedi prima a WRead."
 
 msgid "File not found."
 msgstr "File non trovato."
@@ -233,14 +233,14 @@ msgstr "Calcolo hash del libro…"
 msgid "Could not read file."
 msgstr "Impossibile leggere il file."
 
-msgid "Already in your Readest library:"
-msgstr "Già nella tua libreria Readest:"
+msgid "Already in your WRead library:"
+msgstr "Già nella tua libreria WRead:"
 
-msgid "Added to Readest:"
-msgstr "Aggiunto a Readest:"
+msgid "Added to WRead:"
+msgstr "Aggiunto a WRead:"
 
-msgid "Log in Readest Account"
-msgstr "Accedi all'account Readest"
+msgid "Log in WRead Account"
+msgstr "Accedi all'account WRead"
 
 msgid "Log out as %1"
 msgstr "Esci come %1"
@@ -248,8 +248,8 @@ msgstr "Esci come %1"
 msgid "Auto sync"
 msgstr "Sincronizzazione automatica"
 
-msgid "Readest library"
-msgstr "Libreria Readest"
+msgid "WRead library"
+msgstr "Libreria WRead"
 
 msgid "Push books now"
 msgstr "Invia libri ora"
@@ -284,8 +284,8 @@ msgstr "Controlla aggiornamenti"
 msgid "Please login first"
 msgstr "Effettua prima l'accesso"
 
-msgid "Please configure Readest settings first"
-msgstr "Configura prima le impostazioni Readest"
+msgid "Please configure WRead settings first"
+msgstr "Configura prima le impostazioni WRead"
 
 msgid "No book is open"
 msgstr "Nessun libro aperto"
@@ -341,8 +341,8 @@ msgstr "Download aggiornamento in corso…"
 msgid "Failed to download update. Please try again later."
 msgstr "Download aggiornamento non riuscito. Riprova più tardi."
 
-msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Plugin Readest aggiornato a v%1.\n\nRiavvia KOReader per applicare l'aggiornamento."
+msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Plugin WRead aggiornato a v%1.\n\nRiavvia KOReader per applicare l'aggiornamento."
 
 msgid "Restart now"
 msgstr "Riavvia ora"
@@ -401,14 +401,14 @@ msgstr "Configura prima l'URL Supabase e la chiave API"
 msgid "Logging in..."
 msgstr "Accesso in corso…"
 
-msgid "Successfully logged in to Readest"
-msgstr "Accesso a Readest riuscito"
+msgid "Successfully logged in to WRead"
+msgstr "Accesso a WRead riuscito"
 
 msgid "Login failed: %1"
 msgstr "Accesso non riuscito: %1"
 
-msgid "Logged out from Readest"
-msgstr "Disconnesso da Readest"
+msgid "Logged out from WRead"
+msgstr "Disconnesso da WRead"
 
 msgid "Cannot identify the current book"
 msgstr "Impossibile identificare il libro attuale"

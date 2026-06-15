@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: Readest contributors\n"
+"Last-Translator: WRead contributors\n"
 "Language-Team: Romanian\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
 
-msgid "Readest"
-msgstr "Readest"
+msgid "WRead"
+msgstr "WRead"
 
-msgid "Keeps your KOReader and Readest devices in sync."
-msgstr "Menține dispozitivele tale KOReader și Readest sincronizate."
+msgid "Keeps your KOReader and WRead devices in sync."
+msgstr "Menține dispozitivele tale KOReader și WRead sincronizate."
 
 msgid "Library view"
 msgstr "Vizualizare bibliotecă"
@@ -77,14 +77,14 @@ msgstr "Folder descărcare…"
 msgid "Pick a folder for downloaded books"
 msgstr "Alege un folder pentru cărțile descărcate"
 
-msgid "Sign in to Readest to open the Library"
-msgstr "Conectează-te la Readest pentru a deschide biblioteca"
+msgid "Sign in to WRead to open the Library"
+msgstr "Conectează-te la WRead pentru a deschide biblioteca"
 
 msgid "Library"
 msgstr "Bibliotecă"
 
-msgid "Readest Library"
-msgstr "Biblioteca Readest"
+msgid "WRead Library"
+msgstr "Biblioteca WRead"
 
 msgid "Cancel"
 msgstr "Anulează"
@@ -107,8 +107,8 @@ msgstr "Pluginul Cover Browser este necesar pentru randarea completă a bibliote
 msgid "File moved or deleted. Rescan library?"
 msgstr "Fișier mutat sau șters. Rescanezi biblioteca?"
 
-msgid "Download this book from Readest?"
-msgstr "Descarci această carte din Readest?"
+msgid "Download this book from WRead?"
+msgstr "Descarci această carte din WRead?"
 
 msgid "Download"
 msgstr "Descarcă"
@@ -125,8 +125,8 @@ msgstr "Copia din cloud nu este disponibilă."
 msgid "Download failed."
 msgstr "Descărcare eșuată."
 
-msgid "No cover available on Readest."
-msgstr "Nicio copertă disponibilă pe Readest."
+msgid "No cover available on WRead."
+msgstr "Nicio copertă disponibilă pe WRead."
 
 msgid "Cover download failed."
 msgstr "Descărcarea copertei a eșuat."
@@ -182,14 +182,14 @@ msgstr "Descarcă coperta"
 msgid "Download All"
 msgstr "Descarcă tot"
 
-msgid "Open Readest Library"
-msgstr "Deschide biblioteca Readest"
+msgid "Open WRead Library"
+msgstr "Deschide biblioteca WRead"
 
-msgid "Push Readest book library"
-msgstr "Trimite biblioteca Readest"
+msgid "Push WRead book library"
+msgstr "Trimite biblioteca WRead"
 
-msgid "Pull Readest book library"
-msgstr "Preia biblioteca Readest"
+msgid "Pull WRead book library"
+msgstr "Preia biblioteca WRead"
 
 msgid "Set auto progress sync"
 msgstr "Setează sincronizarea automată a progresului"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "inactiv"
 
 msgid "Toggle auto readest sync"
-msgstr "Comută sincronizarea automată Readest"
+msgstr "Comută sincronizarea automată WRead"
 
 msgid "Push readest progress from this device"
-msgstr "Trimite progresul Readest de pe acest dispozitiv"
+msgstr "Trimite progresul WRead de pe acest dispozitiv"
 
 msgid "Pull readest progress from other devices"
-msgstr "Obține progresul Readest de pe alte dispozitive"
+msgstr "Obține progresul WRead de pe alte dispozitive"
 
 msgid "Push readest annotations from this device"
-msgstr "Trimite adnotările Readest de pe acest dispozitiv"
+msgstr "Trimite adnotările WRead de pe acest dispozitiv"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Obține adnotările Readest de pe alte dispozitive"
+msgstr "Obține adnotările WRead de pe alte dispozitive"
 
-msgid "Add to Readest"
-msgstr "Adaugă la Readest"
+msgid "Add to WRead"
+msgstr "Adaugă la WRead"
 
-msgid "Sign in to Readest first."
-msgstr "Conectează-te mai întâi la Readest."
+msgid "Sign in to WRead first."
+msgstr "Conectează-te mai întâi la WRead."
 
 msgid "File not found."
 msgstr "Fișier negăsit."
@@ -233,14 +233,14 @@ msgstr "Se calculează hash-ul cărții…"
 msgid "Could not read file."
 msgstr "Nu s-a putut citi fișierul."
 
-msgid "Already in your Readest library:"
-msgstr "Deja în biblioteca ta Readest:"
+msgid "Already in your WRead library:"
+msgstr "Deja în biblioteca ta WRead:"
 
-msgid "Added to Readest:"
-msgstr "Adăugat la Readest:"
+msgid "Added to WRead:"
+msgstr "Adăugat la WRead:"
 
-msgid "Log in Readest Account"
-msgstr "Autentificare în contul Readest"
+msgid "Log in WRead Account"
+msgstr "Autentificare în contul WRead"
 
 msgid "Log out as %1"
 msgstr "Deconectare de la %1"
@@ -248,8 +248,8 @@ msgstr "Deconectare de la %1"
 msgid "Auto sync"
 msgstr "Sincronizare automată"
 
-msgid "Readest library"
-msgstr "Biblioteca Readest"
+msgid "WRead library"
+msgstr "Biblioteca WRead"
 
 msgid "Push books now"
 msgstr "Trimite cărțile acum"
@@ -284,8 +284,8 @@ msgstr "Verifică actualizările"
 msgid "Please login first"
 msgstr "Autentifică-te mai întâi"
 
-msgid "Please configure Readest settings first"
-msgstr "Configurează mai întâi setările Readest"
+msgid "Please configure WRead settings first"
+msgstr "Configurează mai întâi setările WRead"
 
 msgid "No book is open"
 msgstr "Nicio carte deschisă"
@@ -341,8 +341,8 @@ msgstr "Se descarcă actualizarea…"
 msgid "Failed to download update. Please try again later."
 msgstr "Descărcarea actualizării a eșuat. Încearcă din nou mai târziu."
 
-msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Plugin Readest actualizat la v%1.\n\nReporneste KOReader pentru a aplica actualizarea."
+msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Plugin WRead actualizat la v%1.\n\nReporneste KOReader pentru a aplica actualizarea."
 
 msgid "Restart now"
 msgstr "Repornește acum"
@@ -401,14 +401,14 @@ msgstr "Configurează mai întâi URL-ul Supabase și cheia API"
 msgid "Logging in..."
 msgstr "Se conectează…"
 
-msgid "Successfully logged in to Readest"
-msgstr "Autentificat în Readest"
+msgid "Successfully logged in to WRead"
+msgstr "Autentificat în WRead"
 
 msgid "Login failed: %1"
 msgstr "Autentificare eșuată: %1"
 
-msgid "Logged out from Readest"
-msgstr "Deconectat de la Readest"
+msgid "Logged out from WRead"
+msgstr "Deconectat de la WRead"
 
 msgid "Cannot identify the current book"
 msgstr "Cartea curentă nu poate fi identificată"

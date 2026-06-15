@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: Readest contributors\n"
+"Last-Translator: WRead contributors\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "Readest"
-msgstr "Readest"
+msgid "WRead"
+msgstr "WRead"
 
-msgid "Keeps your KOReader and Readest devices in sync."
-msgstr "Synchronizuje urządzenia KOReader i Readest."
+msgid "Keeps your KOReader and WRead devices in sync."
+msgstr "Synchronizuje urządzenia KOReader i WRead."
 
 msgid "Library view"
 msgstr "Widok biblioteki"
@@ -77,14 +77,14 @@ msgstr "Folder pobierania…"
 msgid "Pick a folder for downloaded books"
 msgstr "Wybierz folder na pobrane książki"
 
-msgid "Sign in to Readest to open the Library"
-msgstr "Zaloguj się do Readest, aby otworzyć bibliotekę"
+msgid "Sign in to WRead to open the Library"
+msgstr "Zaloguj się do WRead, aby otworzyć bibliotekę"
 
 msgid "Library"
 msgstr "Biblioteka"
 
-msgid "Readest Library"
-msgstr "Biblioteka Readest"
+msgid "WRead Library"
+msgstr "Biblioteka WRead"
 
 msgid "Cancel"
 msgstr "Anuluj"
@@ -107,8 +107,8 @@ msgstr "Wtyczka Cover Browser wymagana do pełnego renderowania biblioteki. Powr
 msgid "File moved or deleted. Rescan library?"
 msgstr "Plik przeniesiono lub usunięto. Przeskanować bibliotekę ponownie?"
 
-msgid "Download this book from Readest?"
-msgstr "Pobrać tę książkę z Readest?"
+msgid "Download this book from WRead?"
+msgstr "Pobrać tę książkę z WRead?"
 
 msgid "Download"
 msgstr "Pobierz"
@@ -125,8 +125,8 @@ msgstr "Kopia w chmurze niedostępna."
 msgid "Download failed."
 msgstr "Pobieranie nie powiodło się."
 
-msgid "No cover available on Readest."
-msgstr "Brak okładki w Readest."
+msgid "No cover available on WRead."
+msgstr "Brak okładki w WRead."
 
 msgid "Cover download failed."
 msgstr "Nie udało się pobrać okładki."
@@ -182,14 +182,14 @@ msgstr "Pobierz okładkę"
 msgid "Download All"
 msgstr "Pobierz wszystkie"
 
-msgid "Open Readest Library"
-msgstr "Otwórz bibliotekę Readest"
+msgid "Open WRead Library"
+msgstr "Otwórz bibliotekę WRead"
 
-msgid "Push Readest book library"
-msgstr "Wyślij bibliotekę Readest"
+msgid "Push WRead book library"
+msgstr "Wyślij bibliotekę WRead"
 
-msgid "Pull Readest book library"
-msgstr "Pobierz bibliotekę Readest"
+msgid "Pull WRead book library"
+msgstr "Pobierz bibliotekę WRead"
 
 msgid "Set auto progress sync"
 msgstr "Ustaw automatyczną synchronizację postępu"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "wył."
 
 msgid "Toggle auto readest sync"
-msgstr "Przełącz automatyczną synchronizację Readest"
+msgstr "Przełącz automatyczną synchronizację WRead"
 
 msgid "Push readest progress from this device"
-msgstr "Wyślij postęp Readest z tego urządzenia"
+msgstr "Wyślij postęp WRead z tego urządzenia"
 
 msgid "Pull readest progress from other devices"
-msgstr "Pobierz postęp Readest z innych urządzeń"
+msgstr "Pobierz postęp WRead z innych urządzeń"
 
 msgid "Push readest annotations from this device"
-msgstr "Wyślij notatki Readest z tego urządzenia"
+msgstr "Wyślij notatki WRead z tego urządzenia"
 
 msgid "Pull readest annotations from other devices"
-msgstr "Pobierz notatki Readest z innych urządzeń"
+msgstr "Pobierz notatki WRead z innych urządzeń"
 
-msgid "Add to Readest"
-msgstr "Dodaj do Readest"
+msgid "Add to WRead"
+msgstr "Dodaj do WRead"
 
-msgid "Sign in to Readest first."
-msgstr "Najpierw zaloguj się do Readest."
+msgid "Sign in to WRead first."
+msgstr "Najpierw zaloguj się do WRead."
 
 msgid "File not found."
 msgstr "Nie znaleziono pliku."
@@ -233,14 +233,14 @@ msgstr "Obliczanie skrótu książki…"
 msgid "Could not read file."
 msgstr "Nie można odczytać pliku."
 
-msgid "Already in your Readest library:"
-msgstr "Już w twojej bibliotece Readest:"
+msgid "Already in your WRead library:"
+msgstr "Już w twojej bibliotece WRead:"
 
-msgid "Added to Readest:"
-msgstr "Dodano do Readest:"
+msgid "Added to WRead:"
+msgstr "Dodano do WRead:"
 
-msgid "Log in Readest Account"
-msgstr "Zaloguj się do konta Readest"
+msgid "Log in WRead Account"
+msgstr "Zaloguj się do konta WRead"
 
 msgid "Log out as %1"
 msgstr "Wyloguj jako %1"
@@ -248,8 +248,8 @@ msgstr "Wyloguj jako %1"
 msgid "Auto sync"
 msgstr "Auto synchronizacja"
 
-msgid "Readest library"
-msgstr "Biblioteka Readest"
+msgid "WRead library"
+msgstr "Biblioteka WRead"
 
 msgid "Push books now"
 msgstr "Wyślij książki teraz"
@@ -284,8 +284,8 @@ msgstr "Sprawdź aktualizacje"
 msgid "Please login first"
 msgstr "Najpierw się zaloguj"
 
-msgid "Please configure Readest settings first"
-msgstr "Najpierw skonfiguruj ustawienia Readest"
+msgid "Please configure WRead settings first"
+msgstr "Najpierw skonfiguruj ustawienia WRead"
 
 msgid "No book is open"
 msgstr "Brak otwartej książki"
@@ -341,8 +341,8 @@ msgstr "Pobieranie aktualizacji…"
 msgid "Failed to download update. Please try again later."
 msgstr "Nie udało się pobrać aktualizacji. Spróbuj ponownie później."
 
-msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Wtyczka Readest zaktualizowana do v%1.\n\nUruchom ponownie KOReader, aby zastosować aktualizację."
+msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "Wtyczka WRead zaktualizowana do v%1.\n\nUruchom ponownie KOReader, aby zastosować aktualizację."
 
 msgid "Restart now"
 msgstr "Uruchom ponownie"
@@ -401,14 +401,14 @@ msgstr "Najpierw skonfiguruj URL Supabase i klucz API"
 msgid "Logging in..."
 msgstr "Logowanie…"
 
-msgid "Successfully logged in to Readest"
-msgstr "Zalogowano do Readest"
+msgid "Successfully logged in to WRead"
+msgstr "Zalogowano do WRead"
 
 msgid "Login failed: %1"
 msgstr "Logowanie nie powiodło się: %1"
 
-msgid "Logged out from Readest"
-msgstr "Wylogowano z Readest"
+msgid "Logged out from WRead"
+msgstr "Wylogowano z WRead"
 
 msgid "Cannot identify the current book"
 msgstr "Nie można zidentyfikować bieżącej książki"

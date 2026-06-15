@@ -1,14 +1,14 @@
 {
   "app_name": {
-    "message": "Trimite la Readest",
+    "message": "Trimite la WRead",
     "description": "Extension name shown in the browser toolbar and the Chrome Web Store listing."
   },
   "app_description": {
-    "message": "Salvează pagini web în biblioteca ta Readest",
+    "message": "Salvează pagini web în biblioteca ta WRead",
     "description": "Short description shown in the Chrome Web Store listing."
   },
   "action_title": {
-    "message": "Trimite la Readest",
+    "message": "Trimite la WRead",
     "description": "Tooltip on the toolbar action button."
   }
 }

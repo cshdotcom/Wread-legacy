@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: readest.koplugin\n"
-"Last-Translator: Readest contributors\n"
+"Last-Translator: WRead contributors\n"
 "Language-Team: Tibetan\n"
 "Language: bo\n"
 "MIME-Version: 1.0\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Readest"
-msgstr "Readest"
+msgid "WRead"
+msgstr "WRead"
 
-msgid "Keeps your KOReader and Readest devices in sync."
-msgstr "ཁྱེད་ཀྱི་ KOReader དང་ Readest སྒྲིག་ཆས་མཉམ་འགྱུར་འཇོག"
+msgid "Keeps your KOReader and WRead devices in sync."
+msgstr "ཁྱེད་ཀྱི་ KOReader དང་ WRead སྒྲིག་ཆས་མཉམ་འགྱུར་འཇོག"
 
 msgid "Library view"
 msgstr "དཔེ་མཛོད་མཐོང་སྣང་"
@@ -77,14 +77,14 @@ msgstr "ཕབ་ལེན་ཡིག་སྣོད་…"
 msgid "Pick a folder for downloaded books"
 msgstr "ཕབ་ལེན་བྱས་ཟིན་པའི་དེབ་ཀྱི་ཡིག་སྣོད་འདེམས་པ་"
 
-msgid "Sign in to Readest to open the Library"
-msgstr "དཔེ་མཛོད་འབྱེད་པར་Readestལ་ཐོ་འཇུག་གནང་རོགས་"
+msgid "Sign in to WRead to open the Library"
+msgstr "དཔེ་མཛོད་འབྱེད་པར་WReadལ་ཐོ་འཇུག་གནང་རོགས་"
 
 msgid "Library"
 msgstr "དཔེ་མཛོད་"
 
-msgid "Readest Library"
-msgstr "Readest དཔེ་མཛོད་"
+msgid "WRead Library"
+msgstr "WRead དཔེ་མཛོད་"
 
 msgid "Cancel"
 msgstr "འདོར་བ།"
@@ -107,8 +107,8 @@ msgstr "དཔེ་མཛོད་ཡོངས་སུ་འཆར་སྟོ
 msgid "File moved or deleted. Rescan library?"
 msgstr "ཡིག་ཆ་སྤོ་འགྱུར་ངམ་སུབ་ཡོད། དཔེ་མཛོད་ཡང་བསྐྱར་ཞིབ་ཤིབ་བྱེད་དམ?"
 
-msgid "Download this book from Readest?"
-msgstr "དེབ་འདི་Readestནས་ཕབ་ལེན་བྱེད་དམ?"
+msgid "Download this book from WRead?"
+msgstr "དེབ་འདི་WReadནས་ཕབ་ལེན་བྱེད་དམ?"
 
 msgid "Download"
 msgstr "ཕབ་ལེན་"
@@ -125,8 +125,8 @@ msgstr "སྤྲིན་གྲུབ་པར་མེད།"
 msgid "Download failed."
 msgstr "ཕབ་ལེན་མ་ཐུབ།"
 
-msgid "No cover available on Readest."
-msgstr "Readestལ་འགྲམ་ཤོག་མེད།"
+msgid "No cover available on WRead."
+msgstr "WReadལ་འགྲམ་ཤོག་མེད།"
 
 msgid "Cover download failed."
 msgstr "འགྲམ་ཤོག་ཕབ་ལེན་མ་ཐུབ།"
@@ -182,14 +182,14 @@ msgstr "འགྲམ་ཤོག་ཕབ་ལེན་"
 msgid "Download All"
 msgstr "ཐམས་ཅད་ཕབ་ལེན་"
 
-msgid "Open Readest Library"
-msgstr "Readestདཔེ་མཛོད་འབྱེད་པ་"
+msgid "Open WRead Library"
+msgstr "WReadདཔེ་མཛོད་འབྱེད་པ་"
 
-msgid "Push Readest book library"
-msgstr "Readestདེབ་མཛོད་སྐུར་བ་"
+msgid "Push WRead book library"
+msgstr "WReadདེབ་མཛོད་སྐུར་བ་"
 
-msgid "Pull Readest book library"
-msgstr "Readestདེབ་མཛོད་ལེན་པ་"
+msgid "Pull WRead book library"
+msgstr "WReadདེབ་མཛོད་ལེན་པ་"
 
 msgid "Set auto progress sync"
 msgstr "རང་འགུལ་འཕེལ་རིམ་མཉམ་འགྱུར་སྒྲིག"
@@ -201,25 +201,25 @@ msgid "off"
 msgstr "བཀག"
 
 msgid "Toggle auto readest sync"
-msgstr "Readest རང་འགུལ་མཉམ་འགྱུར་སྒྱུར་བ།"
+msgstr "WRead རང་འགུལ་མཉམ་འགྱུར་སྒྱུར་བ།"
 
 msgid "Push readest progress from this device"
-msgstr "སྒྲིག་ཆས་འདི་ནས་ Readest འཕེལ་རིམ་སྐུར་བ།"
+msgstr "སྒྲིག་ཆས་འདི་ནས་ WRead འཕེལ་རིམ་སྐུར་བ།"
 
 msgid "Pull readest progress from other devices"
-msgstr "སྒྲིག་ཆས་གཞན་ནས་ Readest འཕེལ་རིམ་ལེན་པ།"
+msgstr "སྒྲིག་ཆས་གཞན་ནས་ WRead འཕེལ་རིམ་ལེན་པ།"
 
 msgid "Push readest annotations from this device"
-msgstr "སྒྲིག་ཆས་འདི་ནས་ Readest མཆན་འགྲེལ་སྐུར་བ།"
+msgstr "སྒྲིག་ཆས་འདི་ནས་ WRead མཆན་འགྲེལ་སྐུར་བ།"
 
 msgid "Pull readest annotations from other devices"
-msgstr "སྒྲིག་ཆས་གཞན་ནས་ Readest མཆན་འགྲེལ་ལེན་པ།"
+msgstr "སྒྲིག་ཆས་གཞན་ནས་ WRead མཆན་འགྲེལ་ལེན་པ།"
 
-msgid "Add to Readest"
-msgstr "Readestལ་སྣོན་པ་"
+msgid "Add to WRead"
+msgstr "WReadལ་སྣོན་པ་"
 
-msgid "Sign in to Readest first."
-msgstr "ཐོག་མར་Readestལ་ཐོ་འཇུག་གནང་རོགས།"
+msgid "Sign in to WRead first."
+msgstr "ཐོག་མར་WReadལ་ཐོ་འཇུག་གནང་རོགས།"
 
 msgid "File not found."
 msgstr "ཡིག་ཆ་མ་རྙེད།"
@@ -233,14 +233,14 @@ msgstr "དེབ་ཀྱི་མཛུབ་རྗེས་རྩིས་བ
 msgid "Could not read file."
 msgstr "ཡིག་ཆ་ཀློག་མ་ཐུབ།"
 
-msgid "Already in your Readest library:"
-msgstr "ཁྱེད་ཀྱི་Readestདཔེ་མཛོད་ནང་ཡོད་ཟིན་:"
+msgid "Already in your WRead library:"
+msgstr "ཁྱེད་ཀྱི་WReadདཔེ་མཛོད་ནང་ཡོད་ཟིན་:"
 
-msgid "Added to Readest:"
-msgstr "Readestལ་སྣོན་ཟིན་:"
+msgid "Added to WRead:"
+msgstr "WReadལ་སྣོན་ཟིན་:"
 
-msgid "Log in Readest Account"
-msgstr "Readest རྩིས་ཐོར་འཛུལ་ཞུགས།"
+msgid "Log in WRead Account"
+msgstr "WRead རྩིས་ཐོར་འཛུལ་ཞུགས།"
 
 msgid "Log out as %1"
 msgstr "%1 ནས་ཕྱིར་ཐོན།"
@@ -248,8 +248,8 @@ msgstr "%1 ནས་ཕྱིར་ཐོན།"
 msgid "Auto sync"
 msgstr "རང་འགུལ་མཉམ་སྦྱོར་"
 
-msgid "Readest library"
-msgstr "Readest དཔེ་མཛོད་"
+msgid "WRead library"
+msgstr "WRead དཔེ་མཛོད་"
 
 msgid "Push books now"
 msgstr "དེབ་རྣམས་ད་ལྟ་སྐུར་"
@@ -284,8 +284,8 @@ msgstr "གསར་སྤེལ་ཞིབ་བཤེར"
 msgid "Please login first"
 msgstr "དང་པོ་འཛུལ་ཞུགས་གནང་རོགས།"
 
-msgid "Please configure Readest settings first"
-msgstr "དང་པོ་ Readest སྒྲིག་འགོད་གནང་རོགས།"
+msgid "Please configure WRead settings first"
+msgstr "དང་པོ་ WRead སྒྲིག་འགོད་གནང་རོགས།"
 
 msgid "No book is open"
 msgstr "དཔེ་ཆ་ཁ་ཕྱེ་མེད།"
@@ -341,8 +341,8 @@ msgstr "གསར་སྤེལ་ཕབ་ལེན་བཞིན་པ…"
 msgid "Failed to download update. Please try again later."
 msgstr "གསར་སྤེལ་ཕབ་ལེན་མ་ཐུབ། རྗེས་སུ་ཡང་བསྐྱར་ཚོད་ལྟ་གནང་རོགས།"
 
-msgid "Readest plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
-msgstr "Readest plugin v%1 ལ་གསར་སྤེལ་བྱས་སོང་།\n\nགསར་སྤེལ་སྤྱོད་པར་ KOReader ཡང་བསྐྱར་འགོ་འཛུགས་གནང་རོགས།"
+msgid "WRead plugin updated to v%1.\n\nPlease restart KOReader to apply the update."
+msgstr "WRead plugin v%1 ལ་གསར་སྤེལ་བྱས་སོང་།\n\nགསར་སྤེལ་སྤྱོད་པར་ KOReader ཡང་བསྐྱར་འགོ་འཛུགས་གནང་རོགས།"
 
 msgid "Restart now"
 msgstr "ད་ལྟ་ཡང་བསྐྱར་འགོ་འཛུགས།"
@@ -401,14 +401,14 @@ msgstr "དང་པོ་ Supabase URL དང་ API ལྡེ་མིག་�
 msgid "Logging in..."
 msgstr "འཛུལ་ཞུགས་བཞིན་པ…"
 
-msgid "Successfully logged in to Readest"
-msgstr "Readest ལ་ལེགས་པར་འཛུལ་ཞུགས་སོང་།"
+msgid "Successfully logged in to WRead"
+msgstr "WRead ལ་ལེགས་པར་འཛུལ་ཞུགས་སོང་།"
 
 msgid "Login failed: %1"
 msgstr "འཛུལ་ཞུགས་མ་ཐུབ: %1"
 
-msgid "Logged out from Readest"
-msgstr "Readest ནས་ཕྱིར་ཐོན་སོང་།"
+msgid "Logged out from WRead"
+msgstr "WRead ནས་ཕྱིར་ཐོན་སོང་།"
 
 msgid "Cannot identify the current book"
 msgstr "མིག་སྔའི་དཔེ་ཆ་ངོས་འཛིན་མི་ཐུབ།"
